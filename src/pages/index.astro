@@ -1,0 +1,233 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const title = "Zero Method | AI Prompts Starter Pack";
+const description = "25 battle-tested AI prompts + 10 professional email templates. Save 5 hours every week with copy-paste ready prompts for ChatGPT and Claude.";
+
+const features = [
+  {
+    title: "25 Tested Prompts",
+    description: "25 carefully crafted prompts across 5 categories. Each one tested and refined for consistent, high-quality results.",
+    icon: "⚡"
+  },
+  {
+    title: "10 Email Templates",
+    description: "Professional email templates for cold outreach, follow-ups, meeting requests, and difficult conversations.",
+    icon: "📧"
+  },
+  {
+    title: "PDF + Markdown",
+    description: "Get both formats. PDF for offline reading, Markdown for easy copying and editing. Works on any device.",
+    icon: "📄"
+  }
+];
+
+const painPoints = [
+  {
+    icon: "⏰",
+    title: "Drowning in Busywork",
+    description: "Hours wasted on emails, reports, and repetitive tasks that should be faster."
+  },
+  {
+    icon: "🤔",
+    title: "AI Confusion",
+    description: "Everyone's talking about AI, but you don't know where to start. Prompts feel like guesswork."
+  },
+  {
+    icon: "📉",
+    title: "Inconsistent Results",
+    description: "When you try AI, output is hit-or-miss. No system, no consistency, no time saved."
+  }
+];
+
+const solutions = [
+  {
+    icon: "⚡",
+    title: "25 Battle-Tested Prompts",
+    description: "Proven prompts that eliminate busywork. Copy, paste, and watch the magic happen. Organized by category: Email, Reports, Content, Productivity, Research."
+  },
+  {
+    icon: "📋",
+    title: "10 Professional Templates",
+    description: "Done-for-you email templates for every situation. Cold outreach, follow-ups, saying no professionally, and more."
+  },
+  {
+    icon: "🎯",
+    title: "Clear Instructions",
+    description: "Each prompt includes usage instructions. Know exactly how to customize for your specific situation."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/50 via-navy-950 to-navy-950"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <!-- Badge -->
+          <div class="inline-flex items-center px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 mb-8">
+            <span class="w-2 h-2 rounded-full bg-gold-500 mr-2"></span>
+            <span class="text-gold-400 text-sm font-medium">25 AI Prompts + 10 Email Templates</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            Save <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">5 Hours a Week</span>
+            <br />With Battle-Tested AI Prompts
+          </h1>
+
+          <!-- Subhead -->
+          <p class="text-lg sm:text-xl text-navy-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            25 proven prompts and 10 professional email templates. No videos, no fluff—just copy-paste ready resources that actually save time.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <a
+              href="/product"
+              class="inline-flex items-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-lg rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20"
+            >
+              Get the Pack — $19
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Trust Signals -->
+          <div class="flex items-center justify-center space-x-6 text-navy-400 text-sm">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>30-Day Guarantee</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Instant Download</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Free Updates (1 Year)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-navy-900/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            What's Included
+          </h2>
+          <p class="text-navy-400 text-lg">
+            Everything you need to start saving time with AI. Nothing you don't.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map(feature => (
+            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800 hover:border-gold-500/30 transition-colors duration-300">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+              <p class="text-navy-400 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Sound Familiar?
+          </h2>
+          <p class="text-navy-400 text-lg">
+            You're busy. But are you actually productive?
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {painPoints.map(point => (
+            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800">
+              <div class="text-4xl mb-4">{point.icon}</div>
+              <h3 class="text-xl font-semibold text-white mb-3">{point.title}</h3>
+              <p class="text-navy-400 leading-relaxed">{point.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-20 bg-navy-900/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 mb-6">
+            <span class="text-gold-400 text-sm font-medium">The Solution</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            A Better Way
+          </h2>
+          <p class="text-navy-400 text-lg">
+            Everything you need to turn AI into your personal productivity engine.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {solutions.map(solution => (
+            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800 hover:border-gold-500/30 transition-colors duration-300">
+              <div class="text-4xl mb-4">{solution.icon}</div>
+              <h3 class="text-xl font-semibold text-white mb-3">{solution.title}</h3>
+              <p class="text-navy-400 leading-relaxed">{solution.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+          Ready to Save 5 Hours Every Week?
+        </h2>
+        <p class="text-navy-400 text-lg mb-8 max-w-2xl mx-auto">
+          Get instant access to 25 proven AI prompts and 10 professional email templates. 
+          Copy, paste, and start saving time today.
+        </p>
+        
+        <a
+          href="/product"
+          class="inline-flex items-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-lg rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20"
+        >
+          Get the Starter Pack — $19
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        
+        <p class="mt-4 text-navy-400 text-sm">
+          30-day money-back guarantee • Instant download
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
