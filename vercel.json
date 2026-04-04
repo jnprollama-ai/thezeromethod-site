@@ -1,5 +1,8 @@
 {
   "version": 2,
-  "name": "zero-method-website",
-  "framework": "astro"
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/blog/(.*)", "dest": "/blog/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
 }
