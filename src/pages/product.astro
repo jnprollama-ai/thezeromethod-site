@@ -2,88 +2,70 @@
 import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
-import StripeButton from '@components/StripeButton.astro';
 
 const title = "Zero Method Starter Pack — 25 AI Prompts + 10 Templates";
-const description = "25 AI prompts + 10 email templates. One-time $19. 30-day guarantee. Works with ChatGPT, Claude, and Gemini.";
+const description = "Get 25 battle-tested AI prompts + 10 email templates for $19. One-time purchase. 30-day guarantee.";
 ---
 
 <Layout title={title} description={description}>
   <Header />
+  
+  <main class="pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Breadcrumb -->
+      <div class="text-sm text-gray-400 mb-8">
+        <a href="/" class="hover:text-white">Home</a> → Starter Pack
+      </div>
 
-  <main class="pt-24 lg:pt-32">
-    <!-- Product Hero -->
-    <section class="py-16 lg:py-24" style="background: var(--bg);">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        
-        <div class="text-sm mb-4" style="color: var(--text-muted);">
-          <a href="/" style="color: var(--text-muted);" class="hover:text-[var(--gold)]">Home</a> → Starter Pack
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-4xl lg:text-6xl font-bold mb-6 font-display" style="color: var(--text);">
-              The Zero Method<br>Starter Pack
-            </h1>
-
-            <p class="text-xl mb-8 max-w-lg" style="color: var(--text-muted);">
-              25 prompts + 10 templates. $19 one-time. Instant download.
-            </p>
-
-            <!-- Payment Buttons -->
-            <div class="space-y-4">
-              <button 
-                id="stripe-checkout"
-                class="w-full max-w-md px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300"
-                style="background: var(--gold); color: var(--bg);"
-              >
-                Pay with Card — $19
-              </button>
-
-              <div id="paypal-button-container" class="w-full max-w-md"></div>
-
-              <p class="text-sm text-center max-w-md" style="color: var(--text-muted);">
-                Or pay with <span style="color: var(--gold); cursor: pointer;" id="paypal-link">PayPal</span>
-              </p>
-            </div>
-
-            <div class="flex items-center gap-6 mt-8 text-sm" style="color: var(--text-muted);">
+      <!-- Product Hero -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div>
+          <p class="text-sm font-medium text-amber-400 mb-4">Starter Pack</p>
+          
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <span class="gradient-text">The Zero Method</span><br>
+            <span class="gradient-gold">Starter Pack</span>
+          </h1>
+          
+          <p class="text-xl text-gray-400 mb-8">
+            25 prompts + 10 templates. $19 one-time. Instant download.
+          </p>
+          
+          <div class="flex items-baseline gap-4 mb-8">
+            <span class="text-5xl font-bold">$19</span>
+            <span class="text-gray-400">one-time</span>
+          </div>
+          
+          <div class="space-y-4 mb-8">
+            <button class="btn-primary w-full max-w-md justify-center text-lg">
+              Pay with Card — $19
+            </button>
+            
+            <div class="flex items-center gap-6 text-sm text-gray-400 max-w-md">
               <span>🔒 SSL Secured</span>
               <span>✓ 30-Day Guarantee</span>
               <span>⚡ Instant Download</span>
             </div>
           </div>
-
-          <div class="relative">
-            <div class="rounded-xl p-8" style="background: var(--surface-2); border: 1px solid var(--border);">
-              <div class="aspect-[3/4] rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, var(--surface), var(--bg));">
-                <div class="text-center">
-                  <div class="text-6xl font-bold mb-2 font-display" style="color: var(--gold);">ZERO</div>
-                  <div class="text-xl font-mono" style="color: var(--text-muted);">METHOD</div>
-                  <div class="mt-4 text-sm" style="color: var(--text-muted);">Starter Pack</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Decorative cards -->
-            <div class="absolute -top-4 -right-4 w-32 h-40 rounded-lg opacity-50 -z-10 transform rotate-6" style="background: var(--surface-2); border: 1px solid var(--border);"></div>
-            <div class="absolute -bottom-4 -left-4 w-32 h-40 rounded-lg opacity-30 -z-10 transform -rotate-6" style="background: var(--surface-2); border: 1px solid var(--border);"></div>
+        </div>
+        
+        <div class="card p-8 flex items-center justify-center">
+          <div class="text-center">
+            <div class="text-6xl font-bold gradient-gold mb-2">ZERO</div>
+            <div class="text-xl text-gray-400 tracking-widest">METHOD</div>
+            <div class="mt-4 text-sm text-gray-500">Starter Pack</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- What You Get -->
-    <section class="py-16 lg:py-24" style="background: var(--surface);">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 font-display" style="color: var(--text);">
-          What You Get
-        </h2>
-
-        <div class="grid md:grid-cols-3 gap-8">
+      <!-- What's Included -->
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold mb-8 gradient-text">What You Get</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 class="text-xl font-bold mb-4" style="color: var(--gold);">25 AI Prompts</h3>
-            <ul class="space-y-2" style="color: var(--text-muted);">
+            <h3 class="text-lg font-semibold mb-3 text-amber-400">25 AI Prompts</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
               <li>✓ Email & Communication (5)</li>
               <li>✓ Reports & Documentation (5)</li>
               <li>✓ Content Creation (5)</li>
@@ -91,10 +73,10 @@ const description = "25 AI prompts + 10 email templates. One-time $19. 30-day gu
               <li>✓ Research & Analysis (5)</li>
             </ul>
           </div>
-
+          
           <div>
-            <h3 class="text-xl font-bold mb-4" style="color: var(--gold);">10 Email Templates</h3>
-            <ul class="space-y-2" style="color: var(--text-muted);">
+            <h3 class="text-lg font-semibold mb-3 text-amber-400">10 Email Templates</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
               <li>✓ Cold outreach (2)</li>
               <li>✓ Follow-up sequences (3)</li>
               <li>✓ Status updates (2)</li>
@@ -102,10 +84,10 @@ const description = "25 AI prompts + 10 email templates. One-time $19. 30-day gu
               <li>✓ Thank you / close (1)</li>
             </ul>
           </div>
-
+          
           <div>
-            <h3 class="text-xl font-bold mb-4" style="color: var(--gold);">Included Free</h3>
-            <ul class="space-y-2" style="color: var(--text-muted);">
+            <h3 class="text-lg font-semibold mb-3 text-amber-400">Included Free</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
               <li>✓ Markdown source files</li>
               <li>✓ Organized by category</li>
               <li>✓ 1 year of updates</li>
@@ -114,102 +96,20 @@ const description = "25 AI prompts + 10 email templates. One-time $19. 30-day gu
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="py-16 lg:py-24" style="background: var(--bg);">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-12 font-display" style="color: var(--text);">
-          Frequently Asked Questions
-        </h2>
-
-        <div class="space-y-4">
-          {[
-            {
-              q: "What's actually included?",
-              a: "You get 25 AI prompts organized into 5 categories (Email, Reports, Content, Productivity, Research) plus 10 professional email templates. Everything is delivered as both PDF and Markdown files for immediate use."
-            },
-            {
-              q: "Do I need technical skills?",
-              a: "Not at all. If you can copy and paste, you can use these prompts. Simply copy the prompt template, fill in your specific details where indicated, and paste into ChatGPT, Claude, or any AI tool."
-            },
-            {
-              q: "How will I receive the product?",
-              a: "Immediate download after purchase. You'll get a ZIP file containing the PDF version and Markdown version. Extract and start using right away. No login portals, no waiting."
-            },
-            {
-              q: "What if I'm not satisfied?",
-              a: "30-day money-back guarantee. If these prompts don't save you time, email us at support@thezeromethod.com within 30 days for a full refund. No questions asked."
-            }
-          ].map((faq, i) => (
-            <div class="rounded-lg overflow-hidden" style="background: var(--surface-2); border: 1px solid var(--border);">
-              <button 
-                class="w-full px-6 py-4 flex justify-between items-center text-left"
-                onclick="this.nextElementSibling.classList.toggle('hidden')"
-              >
-                <span class="text-lg font-bold" style="color: var(--text);">{faq.q}</span>
-                <span style="color: var(--gold);">+</span>
-              </button>
-              <div class="hidden px-6 pb-4" style="border-top: 1px solid var(--border);">
-                <p class="mt-4" style="color: var(--text-muted);">{faq.a}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Guarantee -->
-    <section class="py-16 lg:py-24" style="background: var(--surface-2);">
-      <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-6 font-display" style="color: var(--text);">
-          30-Day No-Questions-Asked Refund
-        </h2>
-
-        <p class="text-lg mb-8" style="color: var(--text-muted);">
-          If you open the pack and it doesn't save you time in the first 30 days,
-          email support@thezeromethod.com. You'll get a full refund within 24 hours.
-          No forms. No explanations required.
+      <!-- Guarantee -->
+      <div class="bg-[#141418] rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">30-Day No-Questions-Asked Refund</h2>
+        <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+          If you open the pack and it doesn't save you time in the first 30 days, email support@thezeromethod.com. You'll get a full refund within 24 hours. No forms. No explanations required.
         </p>
-
-        <button 
-          id="guarantee-cta"
-          class="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300"
-          style="background: var(--gold); color: var(--bg);"
-        >
+        
+        <button class="btn-primary text-lg">
           Get the Pack — $19
         </button>
       </div>
-    </section>
+    </div>
   </main>
 
   <Footer />
-
-  <script>
-    // Stripe Checkout
-    document.getElementById('stripe-checkout')?.addEventListener('click', async () => {
-      try {
-        const response = await fetch('/api/create-checkout-session', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' }
-        });
-        const data = await response.json();
-        if (data.url) {
-          window.location.href = data.url;
-        }
-      } catch (error) {
-        alert('Payment initialization failed. Please try again.');
-      }
-    });
-
-    // Guarantee CTA
-    document.getElementById('guarantee-cta')?.addEventListener('click', () => {
-      document.getElementById('stripe-checkout')?.click();
-    });
-
-    // PayPal placeholder
-    document.getElementById('paypal-link')?.addEventListener('click', () => {
-      alert('PayPal integration coming soon. Use card payment for now.');
-    });
-  </script>
 </Layout>

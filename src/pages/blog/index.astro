@@ -1,102 +1,53 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-
-const title = "Blog | Zero Method";
-const description = "Tips, insights, and strategies for using AI to boost productivity.";
-
 const posts = [
   {
     title: "AI Market This Week: What Actually Matters",
     slug: "ai-market-week-1",
-    date: "April 4, 2026",
+    category: "Analysis",
     readTime: "5 min",
-    excerpt: "The signal in the noise - what professionals should actually pay attention to.",
-    tags: ["market-analysis", "ai-trends"]
+    excerpt: "The signal in the noise — what professionals should actually pay attention to this week."
   },
   {
     title: "The 5-Minute Email That Actually Works",
     slug: "the-5-minute-email",
-    date: "April 3, 2026",
+    category: "Email",
     readTime: "4 min",
-    excerpt: "A prompt we tested 47 times before including it in the pack. Learn how to write professional emails that work.",
-    tags: ["email", "prompts", "productivity"]
+    excerpt: "A prompt we tested 47 times before including it in the pack."
   },
   {
     title: "Welcome to Zero Method",
     slug: "welcome-to-zero-method",
-    date: "April 2, 2026",
+    category: "Welcome",
     readTime: "3 min",
-    excerpt: "Why we built Zero Method and what makes us different. Our philosophy and approach to AI productivity.",
-    tags: ["welcome", "philosophy"]
+    excerpt: "Why we built this and what makes us different."
   }
 ];
 ---
 
-<Layout title={title} description={description}>
-  <Header />
-  
-  <main class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <!-- Header -->
-      <header class="text-center mb-16">
-        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--gold);">
-          Blog
-        </span>
-        <h1 class="text-4xl lg:text-5xl font-bold mt-4" style="color: var(--text);">
-          Zero Method Blog
-        </h1>
-        <p class="mt-4 text-lg" style="color: var(--text-muted);">
-          Tips, insights, and strategies for using AI to boost productivity.
-        </p>
-      </header>
-
-      <!-- Posts Grid -->
-      <div class="space-y-8">
-        {posts.map(post => (
-          <article class="group rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="background: var(--surface-2); border: 1px solid var(--border);">
-            <a href={`/blog/${post.slug}`} class="block p-8">
-              <div class="flex flex-wrap gap-2 mb-4">
-                {post.tags.map(tag => (
-                  <span class="px-3 py-1 rounded-full text-xs font-mono uppercase" style="background: var(--bg); color: var(--gold);">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              
-              <h2 class="text-2xl font-bold mb-2 group-hover:text-[var(--gold)] transition-colors" style="color: var(--text);">
-                {post.title}
-              </h2>
-              
-              <p class="mb-4" style="color: var(--text-muted);">
-                {post.excerpt}
-              </p>
-              
-              <div class="flex items-center gap-4 text-sm" style="color: var(--text-muted);">
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime} read</span>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-16 p-8 rounded-2xl text-center" style="background: var(--surface-2); border: 1px solid var(--border);">
-        <h2 class="text-2xl font-bold mb-4" style="color: var(--text);">
-          Want more productivity tips?
-        </h2>
-        <p class="mb-6" style="color: var(--text-muted);">
-          Get 25 AI prompts + 10 email templates for $19.
-        </p>
-        <a href="/product" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold transition-all hover:brightness-110" style="background: var(--gold); color: var(--bg);">
-          Get 25 AI Prompts — $19
-        </a>
-      </div>
+<section class="min-h-screen pt-32 pb-20 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-sm font-medium text-amber-400 mb-4">Blog</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text">Zero Method Blog</h1>
+      <p class="text-gray-400 mt-4">Tips, insights, and strategies for using AI to boost productivity.</p>
     </div>
-  </main>
-  
-  <Footer />
-</Layout>
+
+    <div class="space-y-6">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="card block hover:border-amber-500/30 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-amber-400">{post.category}</span>
+              <span class="text-xs text-gray-500">{post.readTime}</span>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl font-semibold mb-2 hover:text-amber-400 transition-colors">{post.title}</h2>
+              <p class="text-gray-400 text-sm">{post.excerpt}</p>
+            </div>
+            <span class="text-amber-400">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

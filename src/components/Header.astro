@@ -1,46 +1,36 @@
 ---
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/product", label: "Product" },
-  { href: "/blog", label: "Blog" }
-];
 ---
 
-<header style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 72px;">
-    <!-- Logo -->
-    <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-      <span style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--navy-900);">0</span>
-      <span style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">ZeroMethod</span>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
+        <span class="text-black font-bold text-sm">0</span>
+      </div>
+      <span class="font-semibold text-white">Zero Method</span>
     </a>
     
-    <!-- Navigation -->
-    <nav style="display: flex; align-items: center; gap: 2rem;">
-      <div style="display: flex; gap: 2rem;">
-        {navLinks.map(link => (
-          <a 
-            href={link.href} 
-            style="font-size: 0.9375rem; color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.2s;"
-            class="nav-link"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-      
-      <a 
-        href="/product" 
-        class="btn btn-primary" 
-        style="padding: 0.625rem 1.25rem; font-size: 0.875rem; background: var(--navy-900);"
-      >
-        Get Started
-      </a>
-    </nav>
+    <div class="flex items-center gap-8">
+      <a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors">Blog</a>
+      <a href="/product" class="text-sm text-gray-400 hover:text-white transition-colors">Product</a>
+      <a href="/product" class="btn-primary text-sm px-5 py-2.5">Get Started</a>
+    </div>
   </div>
-</header>
+</nav>
 
 <style>
-  .nav-link:hover {
-    color: var(--text-primary) !important;
+  .btn-primary {
+    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    color: #000;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
   }
 </style>
