@@ -24,30 +24,146 @@ const posts = [
 ];
 ---
 
-<section class="min-h-screen pt-32 pb-20 px-6">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <p class="text-sm font-medium text-amber-400 mb-4">Blog</p>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text">Zero Method Blog</h1>
-      <p class="text-gray-400 mt-4">Tips, insights, and strategies for using AI to boost productivity.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Zero Method</title>
+  <meta name="description" content="Tips, insights, and strategies for using AI to boost productivity." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obsidian: #0A0A0F;
+      --void: #141418;
+      --gold: #F59E0B;
+      --amber: #FBBF24;
+      --white: #FFFFFF;
+      --smoke: #A1A1AA;
+      --slate: #71717A;
+      --ink: #27272A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--obsidian);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gradient-text {
+      background: linear-gradient(180deg, var(--white) 0%, var(--smoke) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--amber), var(--gold));
+      color: #000;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
+          <span class="text-black font-bold text-sm">0</span>
+        </div>
+        <span class="font-semibold text-white">Zero Method</span>
+      </a>
+      
+      <div class="flex items-center gap-8">
+        <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Home</a>
+        <a href="/product" class="btn-primary text-sm px-5 py-2.5">Get Started</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="space-y-6">
-      {posts.map(post => (
-        <a href={`/blog/${post.slug}`} class="card block hover:border-amber-500/30 transition-colors">
+  <!-- Blog Content -->
+  <section class="min-h-screen pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sm font-medium text-amber-400 mb-4">Blog</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text">Zero Method Blog</h1>
+        <p class="text-gray-400 mt-4">Tips, insights, and strategies for using AI to boost productivity.</p>
+      </div>
+
+      <div class="space-y-6">
+        <a href="/blog/ai-market-week-1" class="card hover:border-amber-500/30">
           <div class="flex flex-col md:flex-row md:items-center gap-4">
             <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-amber-400">{post.category}</span>
-              <span class="text-xs text-gray-500">{post.readTime}</span>
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400">Analysis</span>
+              <span class="text-xs text-gray-500">5 min</span>
             </div>
             <div class="flex-1">
-              <h2 class="text-xl font-semibold mb-2 hover:text-amber-400 transition-colors">{post.title}</h2>
-              <p class="text-gray-400 text-sm">{post.excerpt}</p>
+              <h2 class="text-xl font-semibold mb-2 text-white">AI Market This Week: What Actually Matters</h2>
+              <p class="text-gray-400 text-sm">The signal in the noise — what professionals should actually pay attention to this week.</p>
             </div>
             <span class="text-amber-400">→</span>
           </div>
         </a>
-      ))}
+
+        <a href="/blog/the-5-minute-email" class="card hover:border-blue-500/30">
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-xs text-blue-400">Email</span>
+              <span class="text-xs text-gray-500">4 min</span>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl font-semibold mb-2 text-white">The 5-Minute Email That Actually Works</h2>
+              <p class="text-gray-400 text-sm">A prompt we tested 47 times before including it in the pack.</p>
+            </div>
+            <span class="text-amber-400">→</span>
+          </div>
+        </a>
+
+        <a href="/blog/welcome-to-zero-method" class="card hover:border-emerald-500/30">
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-400">Welcome</span>
+              <span class="text-xs text-gray-500">3 min</span>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl font-semibold mb-2 text-white">Welcome to Zero Method</h2>
+              <p class="text-gray-400 text-sm">Why we built this and what makes us different.</p>
+            </div>
+            <span class="text-amber-400">→</span>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
+</html>

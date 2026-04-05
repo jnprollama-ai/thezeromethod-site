@@ -36,24 +36,43 @@ const description = "Get 25 battle-tested AI prompts + 10 email templates for $1
             <span class="text-gray-400">one-time</span>
           </div>
           
-          <div class="space-y-4 mb-8">
-            <button class="btn-primary w-full max-w-md justify-center text-lg">
-              Pay with Card — $19
+          <!-- Payment Buttons -->
+          <div class="space-y-4 mb-8 max-w-md">
+            <button 
+              id="stripe-btn"
+              class="btn-primary w-full justify-center text-lg py-4"
+              onclick="alert('Stripe integration coming soon!')"
+            >
+              <span>💳</span> Pay with Card — $19
             </button>
             
-            <div class="flex items-center gap-6 text-sm text-gray-400 max-w-md">
-              <span>🔒 SSL Secured</span>
-              <span>✓ 30-Day Guarantee</span>
-              <span>⚡ Instant Download</span>
+            <button 
+              id="paypal-btn"
+              class="w-full py-4 rounded-full text-base border border-white/20 text-white hover:bg-white/5 transition-colors flex items-center justify-center gap-2"
+              onclick="alert('PayPal integration coming soon!')"
+            >
+              <span>🅿️</span> Pay with PayPal
+            </button>
+            
+            <div class="flex items-center justify-center gap-6 text-sm text-gray-400 pt-4 border-t border-white/10">
+              <span class="flex items-center gap-1"><span>🔒</span> SSL Secured</span>
+              <span class="flex items-center gap-1"><span>✓</span> 30-Day Guarantee</span>
+              <span class="flex items-center gap-1"><span>⚡</span> Instant Download</span>
             </div>
           </div>
         </div>
         
-        <div class="card p-8 flex items-center justify-center">
+        <div class="card p-8 flex items-center justify-center min-h-[300px]">
           <div class="text-center">
-            <div class="text-6xl font-bold gradient-gold mb-2">ZERO</div>
-            <div class="text-xl text-gray-400 tracking-widest">METHOD</div>
-            <div class="mt-4 text-sm text-gray-500">Starter Pack</div>
+            <div class="text-7xl font-bold gradient-gold mb-2">ZERO</div>
+            <div class="text-2xl text-gray-400 tracking-widest">METHOD</div>
+            <div class="mt-6 flex items-center justify-center gap-4 text-sm text-gray-500">
+              <span>25 Prompts</span>
+              <span>•</span>
+              <span>10 Templates</span>
+              <span>•</span>
+              <span>$19</span>
+            </div>
           </div>
         </div>
       </div>
@@ -63,48 +82,120 @@ const description = "Get 25 battle-tested AI prompts + 10 email templates for $1
         <h2 class="text-3xl font-bold mb-8 gradient-text">What You Get</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h3 class="text-lg font-semibold mb-3 text-amber-400">25 AI Prompts</h3>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <span class="text-amber-400 text-xl">📧</span>
+              </div>
+              <h3 class="text-lg font-semibold">25 AI Prompts</h3>
+            </div>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>✓ Email & Communication (5)</li>
-              <li>✓ Reports & Documentation (5)</li>
-              <li>✓ Content Creation (5)</li>
-              <li>✓ Productivity & Organization (5)</li>
-              <li>✓ Research & Analysis (5)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Email & Communication (5)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Reports & Documentation (5)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Content Creation (5)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Productivity & Organization (5)</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">✓</span> Research & Analysis (5)</li>
             </ul>
           </div>
           
-          <div>
-            <h3 class="text-lg font-semibold mb-3 text-amber-400">10 Email Templates</h3>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                <span class="text-blue-400 text-xl">✉️</span>
+              </div>
+              <h3 class="text-lg font-semibold">10 Email Templates</h3>
+            </div>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>✓ Cold outreach (2)</li>
-              <li>✓ Follow-up sequences (3)</li>
-              <li>✓ Status updates (2)</li>
-              <li>✓ Meeting requests (2)</li>
-              <li>✓ Thank you / close (1)</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Cold outreach (2)</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Follow-up sequences (3)</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Status updates (2)</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Meeting requests (2)</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Thank you / close (1)</li>
             </ul>
           </div>
           
-          <div>
-            <h3 class="text-lg font-semibold mb-3 text-amber-400">Included Free</h3>
+          <div class="card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                <span class="text-emerald-400 text-xl">🎁</span>
+              </div>
+              <h3 class="text-lg font-semibold">Included Free</h3>
+            </div>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li>✓ Markdown source files</li>
-              <li>✓ Organized by category</li>
-              <li>✓ 1 year of updates</li>
-              <li>✓ 30-day money-back guarantee</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Markdown source files</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Organized by category</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 1 year of updates</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 30-day money-back guarantee</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Instant delivery</li>
             </ul>
           </div>
         </div>
       </div>
 
+      <!-- How It Works -->
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold mb-8 gradient-text">How It Works</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card">
+            <div class="text-4xl font-bold text-white/10 mb-4">01</div>
+            <h3 class="text-lg font-semibold mb-2">Purchase</h3>
+            <p class="text-gray-400 text-sm">Click the button above and complete checkout. We accept card and PayPal.</p>
+          </div>
+          
+          <div class="card">
+            <div class="text-4xl font-bold text-white/10 mb-4">02</div>
+            <h3 class="text-lg font-semibold mb-2">Download</h3>
+            <p class="text-gray-400 text-sm">Get instant access to your ZIP file containing PDF and Markdown versions.</p>
+          </div>
+          
+          <div class="card">
+            <div class="text-4xl font-bold text-white/10 mb-4">03</div>
+            <h3 class="text-lg font-semibold mb-2">Start Saving Time</h3>
+            <p class="text-gray-400 text-sm">Browse the categories, copy a prompt, customize, and execute. Save hours every week.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold mb-8 gradient-text">Frequently Asked</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="font-semibold mb-2">What's actually included?</h3>
+            <p class="text-gray-400 text-sm">You get 25 AI prompts organized into 5 categories plus 10 professional email templates. Everything is delivered as both PDF and Markdown files for immediate use.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="font-semibold mb-2">Do I need technical skills?</h3>
+            <p class="text-gray-400 text-sm">Not at all. If you can copy and paste, you can use these prompts. Simply copy the template, fill in your details, and paste into any AI tool.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="font-semibold mb-2">How do I receive the product?</h3>
+            <p class="text-gray-400 text-sm">Instant download after purchase. You'll get a ZIP file with both PDF and Markdown versions. No waiting, no login portals.</p>
+          </div>
+
+          <div class="card">
+            <h3 class="font-semibold mb-2">What if I'm not satisfied?</h3>
+            <p class="text-gray-400 text-sm">30-day money-back guarantee. Email support@thezeromethod.com within 30 days for a full refund. No forms, no questions asked.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Guarantee -->
-      <div class="bg-[#141418] rounded-2xl p-8 text-center">
+      <div class="card p-8 text-center">
         <h2 class="text-2xl font-bold mb-4">30-Day No-Questions-Asked Refund</h2>
+        
         <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
           If you open the pack and it doesn't save you time in the first 30 days, email support@thezeromethod.com. You'll get a full refund within 24 hours. No forms. No explanations required.
         </p>
         
-        <button class="btn-primary text-lg">
+        <button 
+          class="btn-primary text-lg"
+          onclick="alert('Stripe integration coming soon!')"
+        >
           Get the Pack — $19
         </button>
       </div>
