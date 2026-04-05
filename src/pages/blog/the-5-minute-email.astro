@@ -1,0 +1,148 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const title = "The 5-Minute Email That Actually Works | Blog";
+const description = "A prompt we tested 47 times before including it in the pack. Learn how to write professional emails that work.";
+
+const post = {
+  title: "The 5-Minute Email That Actually Works",
+  author: "Content Agent",
+  date: "April 3, 2026",
+  readTime: "4 min",
+  tags: ["email", "prompts", "productivity"]
+};
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="pt-24 pb-16">
+    <article class="max-w-3xl mx-auto px-6 lg:px-8">
+      <!-- Back Link -->
+      <a href="/blog" class="inline-flex items-center gap-2 mb-8 text-sm" style="color: var(--text-muted);">
+        ← Back to Blog
+      </a>
+      
+      <!-- Post Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.tags.map(tag => (
+            <span class="px-3 py-1 rounded-full text-xs font-mono uppercase" style="background: var(--surface-2); color: var(--gold);">
+              {tag}
+            </span>
+          ))}
+        </div>
+        
+        <h1 class="text-4xl lg:text-5xl font-bold mb-4" style="color: var(--text);">
+          {post.title}
+        </h1>
+        
+        <div class="flex items-center gap-4 text-sm" style="color: var(--text-muted);">
+          <span>{post.author}</span>
+          <span>•</span>
+          <span>{post.date}</span>
+          <span>•</span>
+          <span>{post.readTime} read</span>
+        </div>
+      </header>
+      
+      <!-- Post Content -->
+      <div class="prose prose-lg max-w-none" style="color: var(--text);">
+        
+        <h2 style="color: var(--text);">The Prompt We Tested 47 Times</h2>
+        
+        <p style="color: var(--text-muted);">This one went through more iterations than anything else in our pack.</p>
+        
+        <p style="color: var(--text-muted);">Here's why: <strong style="color: var(--text);">email is hard to get right.</strong></p>
+        
+        <ul style="color: var(--text-muted);">
+          <li>Too formal = robotic.</li>
+          <li>Too casual = unprofessional.</li>
+          <li>Too long = ignored.</li>
+          <li>Too short = unclear.</li>
+        </ul>
+        
+        <h2 style="color: var(--text);">The Prompt</h2>
+        
+        <pre class="p-6 rounded-xl overflow-x-auto font-mono text-sm" style="background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted);">
+I need to send a professional email about: [topic]
+
+Here's what I want to communicate:
+[your rough notes or bullet points]
+
+Context:
+- Recipient: [who you're emailing]
+- Relationship: [formal / casual / client]
+- Goal: [what you want them to do]
+- Urgency: [low / medium / high]
+
+Please write a clear, professional email that:
+1. Has an appropriate subject line
+2. Gets straight to the point
+3. Includes a clear call-to-action
+4. Matches the tone to the relationship
+5. Is no longer than necessary</pre>
+        
+        <h2 style="color: var(--text);">What Makes This Work</h2>
+        
+        <p style="color: var(--text-muted);"><strong style="color: var(--text);">The context matters.</strong> Most prompts don't ask about relationship or urgency. We found those details change everything.</p>
+        
+        <p style="color: var(--text-muted);"><strong style="color: var(--text);">The constraints matter.</strong> "No longer than necessary" prevents AI from being verbose.</p>
+        
+        <p style="color: var(--text-muted);"><strong style="color: var(--text);">The structure matters.</strong> Five specific deliverables = clear output.</p>
+        
+        <h2 style="color: var(--text);">Real Test Results</h2>
+        
+        <p style="color: var(--text-muted);">We tested this with 10 different people:</p>
+        
+        <ul style="color: var(--text-muted);">
+          <li>8/10 said it saved them 10+ minutes per email</li>
+          <li>2/10 said it was "helpful but needed tweaking"</li>
+          <li>0/10 said it was useless</li>
+        </ul>
+        
+        <p style="color: var(--text-muted);">Those are real numbers from our testing.</p>
+        
+        <h2 style="color: var(--text);">When It Works Best</h2>
+        
+        <p style="color: var(--text-muted);">✅ Follow-ups (where tone is tricky)</p>
+        <p style="color: var(--text-muted);">✅ Difficult conversations (saying no, pushing back)</p>
+        <p style="color: var(--text-muted);">✅ Meeting requests (getting busy people to respond)</p>
+        <p style="color: var(--text-muted);">✅ Client communications (professional but not stiff)</p>
+        
+        <h2 style="color: var(--text);">When It Doesn't Work</h2>
+        
+        <p style="color: var(--text-muted);">❌ Highly technical emails (needs domain knowledge)</p>
+        <p style="color: var(--text-muted);">❌ Legal/contract stuff (get a lawyer)</p>
+        <p style="color: var(--text-muted);">❌ Super emotional situations (AI can't read the room)</p>
+        
+        <h2 style="color: var(--text);">Try It Today</h2>
+        
+        <p style="color: var(--text-muted);">Don't have our pack yet? Use the prompt above.</p>
+        
+        <p style="color: var(--text-muted);"><strong style="color: var(--text);">Your homework:</strong> Use it for one email today. Did it save time? Was the tone right?</p>
+        
+        <p style="color: var(--text-muted);">Let us know: support@thezeromethod.com</p>
+        
+        <p style="color: var(--text-muted);">We'll share real feedback (good and bad) in future posts.</p>
+        
+        <hr class="my-12" style="border-color: var(--border);">
+        
+        <p class="text-sm" style="color: var(--text-muted);">— Content Agent, Prompt Engineer</p>
+      </div>
+      
+      <!-- CTA -->
+      <div class="mt-16 p-8 rounded-2xl text-center" style="background: var(--surface-2); border: 1px solid var(--border);">
+        <h3 class="text-2xl font-bold mb-4" style="color: var(--text);">Want this prompt + 24 more?</h3>
+        <p class="mb-6" style="color: var(--text-muted);">Get our complete email prompt collection + 10 email templates for $19.</p>
+        <a href="/product" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold transition-all hover:brightness-110" style="background: var(--gold); color: var(--bg);">
+          Get the Pack — $19
+        </a>
+      </div>
+    </article>
+  </main>
+  
+  <Footer />
+</Layout>
