@@ -6,16 +6,12 @@ const navLinks = [
 ];
 ---
 
-<header style="position: sticky; top: 0; z-index: 100; background: rgba(253, 252, 250, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border);">
+<header style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);">
   <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 72px;">
     <!-- Logo -->
     <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-      <span style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--color-text);">
-        0
-      </span>
-      <span style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 500; color: var(--color-text);">
-        ZeroMethod
-      </span>
+      <span style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--navy-900);">0</span>
+      <span style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">ZeroMethod</span>
     </a>
     
     <!-- Navigation -->
@@ -24,7 +20,7 @@ const navLinks = [
         {navLinks.map(link => (
           <a 
             href={link.href} 
-            style="font-size: 0.9375rem; color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s;"
+            style="font-size: 0.9375rem; color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.2s;"
             class="nav-link"
           >
             {link.label}
@@ -35,7 +31,7 @@ const navLinks = [
       <a 
         href="/product" 
         class="btn btn-primary" 
-        style="padding: 0.625rem 1.25rem; font-size: 0.875rem;"
+        style="padding: 0.625rem 1.25rem; font-size: 0.875rem; background: var(--navy-900);"
       >
         Get Started
       </a>
@@ -45,6 +41,6 @@ const navLinks = [
 
 <style>
   .nav-link:hover {
-    color: var(--color-text) !important;
+    color: var(--text-primary) !important;
   }
 </style>
