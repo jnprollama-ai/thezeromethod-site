@@ -52,26 +52,6 @@ const posts = [
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    .gradient-text {
-      background: linear-gradient(180deg, var(--white) 0%, var(--smoke) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 24px;
-      transition: all 0.4s ease;
-      text-decoration: none;
-      color: var(--white);
-      display: block;
-    }
-    .card:hover {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.12);
-      transform: translateY(-2px);
-    }
     .btn-primary {
       background: linear-gradient(135deg, var(--amber), var(--gold));
       color: #000;
@@ -91,114 +71,54 @@ const posts = [
       transform: translateY(-2px);
       box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
     }
-    /* Blog list styling */
-    .blog-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .blog-card {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    @media (min-width: 768px) {
-      .blog-card {
-        flex-direction: row;
-        align-items: center;
-        gap: 24px;
-      }
-    }
-    .blog-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 140px;
-    }
-    .blog-content {
-      flex: 1;
-    }
-    .blog-title {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .blog-excerpt {
-      color: var(--smoke);
-      font-size: 0.875rem;
-    }
-    .arrow {
-      color: var(--gold);
-      font-size: 1.25rem;
-    }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-          <span class="text-black font-bold text-sm">0</span>
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <div style="width: 32px; height: 32px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <span style="color: black; font-weight: bold; font-size: 14px;">0</span>
         </div>
-        <span class="font-semibold text-white">Zero Method</span>
+        <span style="font-weight: 600; color: white;">Zero Method</span>
       </a>
       
-      <div class="flex items-center gap-6">
-        <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <a href="/" style="color: #A1A1AA; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px;">
           <span>←</span> Back to Home
         </a>
-        <a href="/product" class="btn-primary text-sm px-5 py-2.5">Get Started</a>
+        <a href="/product" class="btn-primary" style="font-size: 14px; padding: 10px 20px;">Get Started</a>
       </div>
     </div>
   </nav>
 
   <!-- Blog Content -->
-  <section class="min-h-screen pt-32 pb-20 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="text-sm font-medium text-amber-400 mb-4">Blog</p>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight gradient-text">Zero Method Blog</h1>
-        <p class="text-gray-400 mt-4">Tips, insights, and strategies for using AI to boost productivity.</p>
-      </div>
+  <section style="min-height: 100vh; padding: 128px 24px 80px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 14px; font-weight: 500; color: #F59E0B; margin-bottom: 16px;">Blog</p>
+      <h1 style="font-size: 40px; font-weight: 700; margin-bottom: 16px; color: white;">Zero Method Blog</h1>
+      <p style="color: #A1A1AA; margin-bottom: 48px;">Tips, insights, and strategies for using AI to boost productivity.</p>
 
-      <div class="blog-list">
-        <a href="/blog/ai-market-week-1" class="card blog-card hover:border-amber-500/30">
-          <div class="blog-meta">
-            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400 whitespace-nowrap">Analysis</span>
-            <span class="text-xs text-gray-500">5 min</span>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">AI Market This Week: What Actually Matters</div>
-            <div class="blog-excerpt">The signal in the noise — what professionals should actually pay attention to this week.</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="/blog/the-5-minute-email" class="card blog-card hover:border-blue-500/30">
-          <div class="blog-meta">
-            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-xs text-blue-400 whitespace-nowrap">Email</span>
-            <span class="text-xs text-gray-500">4 min</span>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">The 5-Minute Email That Actually Works</div>
-            <div class="blog-excerpt">A prompt we tested 47 times before including it in the pack.</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="/blog/welcome-to-zero-method" class="card blog-card hover:border-emerald-500/30">
-          <div class="blog-meta">
-            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-400 whitespace-nowrap">Welcome</span>
-            <span class="text-xs text-gray-500">3 min</span>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">Welcome to Zero Method</div>
-            <div class="blog-excerpt">Why we built this and what makes us different.</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} 
+             style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 24px; transition: all 0.3s ease; text-align: left;"
+             onmouseover="this.style.background='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(255,255,255,0.12)'; this.style.transform='translateY(-2px)';"
+             onmouseout="this.style.background='rgba(255,255,255,0.02)'; this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)';"
+          >
+            <div style="display: flex; align-items: center; gap: 12px; min-width: 140px;">
+              <span style="padding: 4px 12px; background: rgba(245,158,11,0.1); border-radius: 9999px; font-size: 12px; color: #F59E0B;">{post.category}</span>
+              <span style="font-size: 12px; color: #71717A;">{post.readTime}</span>
+            </div>
+            
+            <div style="flex: 1;">
+              <div style="font-size: 18px; font-weight: 600; color: white; margin-bottom: 4px;">{post.title}</div>
+              <div style="color: #A1A1AA; font-size: 14px;">{post.excerpt}</div>
+            </div>
+            <span style="color: #F59E0B; font-size: 20px;">→</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
