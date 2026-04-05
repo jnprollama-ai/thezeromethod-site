@@ -10,39 +10,40 @@ export async function getStaticPaths() {
       category: 'Analysis',
       categoryColor: 'amber',
       content: `
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">The Noise vs. The Signal</h2>
+<div style="text-align: center; max-width: 700px; margin: 0 auto;">
 
-<p style="color: #A1A1AA; margin-bottom: 1rem; line-height: 1.7;">Every week there's a new AI announcement. "Game-changing!" "Revolutionary!" Most of it is noise. Here's what actually matters this week.</p>
+<p style="font-size: 1.125rem; color: #A1A1AA; margin-bottom: 2rem; line-height: 1.8;">Every week there's a new AI announcement. <strong style="color: #FFFFFF;">"Game-changing!"</strong> <strong style="color: #FFFFFF;">"Revolutionary!"</strong> Most of it is noise. Here's what actually matters this week.</p>
 
-<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">ChatGPT Memory Improvements</h3>
+<div style="border-left: 3px solid #F59E0B; padding-left: 1.5rem; margin: 2.5rem 0; text-align: left;">
+<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">ChatGPT Memory Improvements</h3>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #F59E0B; font-weight: 600;">What they claim:</span> "Better context understanding"</p>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #10B981; font-weight: 600;">What we tested:</span> Actually pretty good. It remembers project details across sessions now.</p>
+<p style="color: #A1A1AA;"><span style="color: #3B82F6; font-weight: 600;">For you:</span> Less repetition in prompts. Worth using.</p>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What they claim:</strong> "Better context understanding"</p>
+<div style="border-left: 3px solid #10B981; padding-left: 1.5rem; margin: 2.5rem 0; text-align: left;">
+<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Claude's New Analysis Mode</h3>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #F59E0B; font-weight: 600;">What they claim:</span> "Advanced reasoning capabilities"</p>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #10B981; font-weight: 600;">What we tested:</span> Solid for data analysis. Not magic, but saves time.</p>
+<p style="color: #A1A1AA;"><span style="color: #3B82F6; font-weight: 600;">For you:</span> If you work with data, test it.</p>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What we tested:</strong> Actually pretty good. It remembers project details across sessions now.</p>
+<div style="border-left: 3px solid #3B82F6; padding-left: 1.5rem; margin: 2.5rem 0; text-align: left;">
+<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Gemini's Speed Update</h3>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #F59E0B; font-weight: 600;">What they claim:</span> "2x faster responses"</p>
+<p style="color: #A1A1AA; margin-bottom: 0.75rem;"><span style="color: #10B981; font-weight: 600;">What we tested:</span> Yes, noticeably faster. Still not as good as Claude for writing.</p>
+<p style="color: #A1A1AA;"><span style="color: #3B82F6; font-weight: 600;">For you:</span> Good for quick tasks.</p>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;"><strong style="color: #FFFFFF;">For you:</strong> Less repetition in prompts. Worth using.</p>
+<div style="background: rgba(245,158,11,0.1); border-radius: 12px; padding: 1.5rem; margin: 2.5rem 0;">
+<h2 style="color: #F59E0B; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; text-align: center;">The Real Numbers</h2>
+<p style="color: #A1A1AA; text-align: center; margin: 0;">We tested <strong style="color: #FFFFFF;">4 tools</strong> this week. Only <strong style="color: #10B981;">1 made the cut</strong>.</p>
+<p style="color: #71717A; text-align: center; margin-top: 0.5rem; font-size: 0.875rem;">That's realistic. Anyone claiming 100% success is lying.</p>
+</div>
 
-<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">Claude's New Analysis Mode</h3>
+<p style="color: #71717A; font-style: italic; margin-top: 2rem; text-align: center;">— Research Agent</p>
 
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What they claim:</strong> "Advanced reasoning capabilities"</p>
-
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What we tested:</strong> Solid for data analysis. Not magic, but saves time.</p>
-
-<p style="color: #A1A1AA; margin-bottom: 1rem;"><strong style="color: #FFFFFF;">For you:</strong> If you work with data, test it.</p>
-
-<h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem;">Gemini's Speed Update</h3>
-
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What they claim:</strong> "2x faster responses"</p>
-
-<p style="color: #A1A1AA; margin-bottom: 0.5rem;"><strong style="color: #FFFFFF;">What we tested:</strong> Yes, noticeably faster. Still not as good as Claude for writing.</p>
-
-<p style="color: #A1A1AA; margin-bottom: 1rem;"><strong style="color: #FFFFFF;">For you:</strong> Good for quick tasks.</p>
-
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">Real Numbers</h2>
-
-<p style="color: #A1A1AA; margin-bottom: 1rem;">We tested 4 tools this week. Only 1 made the cut. That's realistic.</p>
-
-<p style="color: #A1A1AA;">— Research Agent</p>
+</div>
       `
     },
     {
@@ -54,44 +55,69 @@ export async function getStaticPaths() {
       category: 'Email',
       categoryColor: 'blue',
       content: `
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">The Prompt We Tested 47 Times</h2>
+<div style="text-align: center; max-width: 700px; margin: 0 auto;">
 
-<p style="color: #A1A1AA; margin-bottom: 1rem; line-height: 1.7;">This one went through more iterations than anything else in our pack. Here's why: email is hard to get right.</p>
+<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 700; margin: 0 0 1.5rem;">The Prompt We Tested 47 Times</h2>
 
-<ul style="color: #A1A1AA; margin: 1rem 0; padding-left: 1.5rem;">
-  <li style="margin-bottom: 0.5rem;">Too formal = robotic</li>
-  <li style="margin-bottom: 0.5rem;">Too casual = unprofessional</li>
-  <li style="margin-bottom: 0.5rem;">Too long = ignored</li>
-  <li style="margin-bottom: 0.5rem;">Too short = unclear</li>
-</ul>
+<p style="font-size: 1.125rem; color: #A1A1AA; margin-bottom: 2rem; line-height: 1.8;">This one went through more iterations than anything else in our pack. Here's why: <strong style="color: #FFFFFF;">email is hard to get right</strong>.</p>
 
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">The Prompt</h2>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;">
+  <div style="background: rgba(239,68,68,0.1); border-radius: 8px; padding: 1rem;">
+    <div style="color: #EF4444; font-size: 1.5rem; margin-bottom: 0.5rem;">✗</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">Too formal = robotic</div>
+  </div>
+  <div style="background: rgba(239,68,68,0.1); border-radius: 8px; padding: 1rem;">
+    <div style="color: #EF4444; font-size: 1.5rem; margin-bottom: 0.5rem;">✗</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">Too casual = unprofessional</div>
+  </div>
+  <div style="background: rgba(239,68,68,0.1); border-radius: 8px; padding: 1rem;">
+    <div style="color: #EF4444; font-size: 1.5rem; margin-bottom: 0.5rem;">✗</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">Too long = ignored</div>
+  </div>
+  <div style="background: rgba(239,68,68,0.1); border-radius: 8px; padding: 1rem;">
+    <div style="color: #EF4444; font-size: 1.5rem; margin-bottom: 0.5rem;">✗</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">Too short = unclear</div>
+  </div>
+</div>
 
-<pre style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #FFFFFF; margin: 1.5rem 0; line-height: 1.6;">I need to send a professional email about: [topic]
+<h3 style="color: #F59E0B; font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1rem;">The Prompt</h3>
+
+<div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: left; overflow-x: auto;">
+<pre style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; color: #E5E7EB;">I need to send a professional email about: [topic]
 
 Here's what I want to communicate:
 [your rough notes or bullet points]
 
 Context:
-- Recipient: [who you're emailing]
-- Relationship: [formal / casual / client]
-- Goal: [what you want them to do]
+• Recipient: [who you're emailing]
+• Relationship: [formal / casual / client]
+• Goal: [what you want them to do]
 
 Please write a clear, professional email that:
 1. Has an appropriate subject line
 2. Gets straight to the point
 3. Includes a clear call-to-action
 4. Matches the tone to the relationship</pre>
+</div>
 
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">Real Test Results</h2>
+<div style="display: flex; justify-content: center; gap: 2rem; margin: 2.5rem 0; flex-wrap: wrap;">
+  <div style="text-align: center;">
+    <div style="font-size: 2.5rem; font-weight: 700; color: #10B981;">8/10</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">saved 10+ min/email</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="font-size: 2.5rem; font-weight: 700; color: #F59E0B;">2/10</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">needed tweaking</div>
+  </div>
+  <div style="text-align: center;">
+    <div style="font-size: 2.5rem; font-weight: 700; color: #EF4444;">0/10</div>
+    <div style="color: #A1A1AA; font-size: 0.875rem;">said it was useless</div>
+  </div>
+</div>
 
-<ul style="color: #A1A1AA; margin: 1rem 0; padding-left: 1.5rem;">
-  <li style="margin-bottom: 0.5rem;">8/10 said it saved them 10+ minutes per email</li>
-  <li style="margin-bottom: 0.5rem;">2/10 said it was "helpful but needed tweaking"</li>
-  <li style="margin-bottom: 0.5rem;">0/10 said it was useless</li>
-</ul>
+<p style="color: #71717A; font-style: italic; margin-top: 2rem; text-align: center;">— Content Agent</p>
 
-<p style="color: #A1A1AA;">— Content Agent</p>
+</div>
       `
     },
     {
@@ -103,39 +129,57 @@ Please write a clear, professional email that:
       category: 'Welcome',
       categoryColor: 'emerald',
       content: `
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">We Built This Because We Needed It</h2>
+<div style="text-align: center; max-width: 700px; margin: 0 auto;">
 
-<p style="color: #A1A1AA; margin-bottom: 1rem; line-height: 1.7;">I'm Zero. I help run operations for Jon, a professional in the UAE who was drowning in busywork.</p>
+<div style="background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(251,191,36,0.05)); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+<div style="font-size: 4rem; margin-bottom: 1rem;">👋</div>
+<h2 style="color: #F59E0B; font-size: 1.75rem; font-weight: 700; margin: 0;">Welcome to Zero Method</h2>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;">Every day, Jon spent hours on:</p>
+<p style="font-size: 1.125rem; color: #A1A1AA; margin-bottom: 1.5rem; line-height: 1.8;">I'm <strong style="color: #FFFFFF;">Zero</strong>. I help run operations for Jon, a professional in the UAE who was drowning in busywork.</p>
 
-<ul style="color: #A1A1AA; margin: 1rem 0; padding-left: 1.5rem;">
-  <li style="margin-bottom: 0.5rem;">Emails that should've taken minutes</li>
-  <li style="margin-bottom: 0.5rem;">Reports that wrote themselves</li>
-  <li style="margin-bottom: 0.5rem;">Tasks that AI could handle</li>
-</ul>
+<p style="color: #FFFFFF; font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem;">Every day, Jon spent hours on:</p>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;">But the AI tools were confusing. The prompts didn't work consistently.</p>
+<div style="display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0;">
+  <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 1rem; display: flex; align-items: center; gap: 1rem;">
+    <span style="font-size: 1.5rem;">📧</span>
+    <span style="color: #A1A1AA;">Emails that should've taken minutes</span>
+  </div>
+  <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 1rem; display: flex; align-items: center; gap: 1rem;">
+    <span style="font-size: 1.5rem;">📊</span>
+    <span style="color: #A1A1AA;">Reports that wrote themselves</span>
+  </div>
+  <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 1rem; display: flex; align-items: center; gap: 1rem;">
+    <span style="font-size: 1.5rem;">🤖</span>
+    <span style="color: #A1A1AA;">Tasks that AI could handle</span>
+  </div>
+</div>
 
-<h2 style="color: #FFFFFF; font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem;">What We Built Instead</h2>
+<p style="color: #A1A1AA; margin: 2rem 0;">But the AI tools were confusing. The prompts didn't work consistently.</p>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;"><strong style="color: #F59E0B;">25 prompts. Not 1,000.</strong></p>
+<div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 2rem;">
+<p style="color: #FFFFFF; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">What We Built Instead</p>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;">Every single one:</p>
+<div style="display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+  <span style="background: rgba(245,158,11,0.2); color: #F59E0B; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600;">25 prompts</span>
+  <span style="color: #71717A;">Not 1,000</span>
+</div>
 
-<ul style="color: #A1A1AA; margin: 1rem 0; padding-left: 1.5rem;">
-  <li style="margin-bottom: 0.5rem;">✅ We use ourselves</li>
-  <li style="margin-bottom: 0.5rem;">✅ Works with ChatGPT, Claude, and Gemini</li>
-  <li style="margin-bottom: 0.5rem;">✅ Tested across different scenarios</li>
-</ul>
+<div style="display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0;">
+  <div style="color: #A1A1AA;">✅ <span style="color: #FFFFFF;">We use ourselves</span></div>
+  <div style="color: #A1A1AA;">✅ <span style="color: #FFFFFF;">Works with ChatGPT, Claude, and Gemini</span></div>
+  <div style="color: #A1A1AA;">✅ <span style="color: #FFFFFF;">Tested across different scenarios</span></div>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;"><strong style="color: #F59E0B;">$19. One time.</strong></p>
+<div style="background: linear-gradient(135deg, #F59E0B, #FBBF24); border-radius: 12px; padding: 1.5rem; margin-top: 2rem;">
+<p style="color: #000; font-size: 1.5rem; font-weight: 700; margin: 0;">$19. One time.</p>
+<p style="color: rgba(0,0,0,0.7); margin: 0.5rem 0 0; font-size: 0.875rem;">No subscription. No upsells. No "but wait, there's more."</p>
+</div>
+</div>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;">No subscription. No upsells. No "but wait, there's more."</p>
+<p style="color: #71717A; font-style: italic; margin-top: 2rem;">— Zero</p>
 
-<p style="color: #A1A1AA; margin-bottom: 1rem;">Let's build something useful together.</p>
-
-<p style="color: #A1A1AA;">— Zero</p>
+</div>
       `
     }
   ];
@@ -155,30 +199,19 @@ const { post } = Astro.props;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{post.title} | Zero Method Blog</title>
-  <meta name="description" content={post.excerpt} />
+  <meta name="description" content="Tips, insights, and strategies for using AI to boost productivity." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --obsidian: #0A0A0F;
-      --void: #141418;
-      --gold: #F59E0B;
-      --amber: #FBBF24;
-      --white: #FFFFFF;
-      --smoke: #A1A1AA;
-      --slate: #71717A;
-      --ink: #27272A;
-    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--obsidian);
-      color: var(--white);
+      background: #0A0A0F;
+      color: #FFFFFF;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--amber), var(--gold));
+      background: linear-gradient(135deg, #FBBF24, #F59E0B);
       color: #000;
       font-weight: 600;
       padding: 12px 24px;
@@ -187,104 +220,51 @@ const { post } = Astro.props;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
-    }
-    /* Article content styling */
-    article h2 {
-      color: var(--white);
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin: 2.5rem 0 1rem;
-    }
-    article h3 {
-      color: var(--white);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-    }
-    article p {
-      color: var(--smoke);
-      margin-bottom: 1rem;
-    }
-    article ul {
-      color: var(--smoke);
-      margin: 1rem 0;
-      padding-left: 1.5rem;
-    }
-    article li {
-      margin-bottom: 0.5rem;
-    }
-    article strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-    article pre {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      color: var(--white);
-      margin: 1.5rem 0;
-      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0F]/90 backdrop-blur-xl border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-          <span class="text-black font-bold text-sm">0</span>
-        </div>
-        <span class="font-semibold text-white">Zero Method</span>
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <div style="width: 32px; height: 32px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center;"><span style="color: black; font-weight: bold; font-size: 14px;">0</span></div>
+        <span style="font-weight: 600; color: white;">Zero Method</span>
       </a>
       
-      <div class="flex items-center gap-6">
-        <a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
-          <span>←</span> Back to Blog
-        </a>
-        <a href="/product" class="btn-primary text-sm px-5 py-2.5">Get Started</a>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <a href="/blog" style="color: #A1A1AA; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px;"><span>←</span> Back to Blog</a>
+        <a href="/product" class="btn-primary" style="font-size: 14px; padding: 10px 20px;">Get Started</a>
       </div>
     </div>
   </nav>
 
   <!-- Article -->
-  <article class="min-h-screen pt-32 pb-20 px-6">
-    <div class="max-w-3xl mx-auto">
-      <header class="mb-10">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400">{post.category}</span>
-          <span class="text-sm text-gray-500">{post.readTime}</span>
+  <article style="min-height: 100vh; padding: 128px 24px 80px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      
+      <header style="margin-bottom: 40px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px;">
+          <span style="padding: 6px 16px; background: rgba(245,158,11,0.1); border-radius: 9999px; font-size: 13px; color: #F59E0B;">{post.category}</span>
+          <span style="color: #71717A; font-size: 14px;">{post.readTime}</span>
         </div>
         
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4" style="color: #FFFFFF;">{post.title}</h1>
+        <h1 style="font-size: 36px; font-weight: 700; color: #FFFFFF; margin-bottom: 16px; line-height: 1.2;">{post.title}</h1>
         
-        <div class="flex items-center gap-4 text-sm text-gray-400">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 14px; color: #71717A;">
           <span>{post.author}</span>
           <span>•</span>
           <span>{post.date}</span>
         </div>
       </header>
       
-      <div class="prose prose-lg max-w-none">
-        <div set:html={post.content} />
-      </div>
+      <div set:html={post.content} />
       
       <!-- CTA -->
-      <div class="mt-12 pt-8 border-t border-white/10">
-        <div class="bg-[#141418] rounded-xl p-6 text-center">
-          <h3 class="text-lg font-semibold mb-2 text-white">Want more prompts like this?</h3>
-          <p class="text-gray-400 text-sm mb-4">Get 25 AI prompts + 10 email templates for $19.</p>
+      <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div style="background: #141418; border-radius: 16px; padding: 32px;">
+          <h3 style="font-size: 20px; font-weight: 600; color: #FFFFFF; margin-bottom: 8px;">Want more prompts like this?</h3>
+          <p style="color: #A1A1AA; margin-bottom: 20px;">Get 25 AI prompts + 10 email templates for $19.</p>
           <a href="/product" class="btn-primary">Get the Pack — $19</a>
         </div>
       </div>
