@@ -3,231 +3,226 @@ import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 
-const title = "Zero Method | AI Prompts Starter Pack";
-const description = "25 battle-tested AI prompts + 10 professional email templates. Save 5 hours every week with copy-paste ready prompts for ChatGPT and Claude.";
-
-const features = [
-  {
-    title: "25 Tested Prompts",
-    description: "25 carefully crafted prompts across 5 categories. Each one tested and refined for consistent, high-quality results.",
-    icon: "⚡"
-  },
-  {
-    title: "10 Email Templates",
-    description: "Professional email templates for cold outreach, follow-ups, meeting requests, and difficult conversations.",
-    icon: "📧"
-  },
-  {
-    title: "PDF + Markdown",
-    description: "Get both formats. PDF for offline reading, Markdown for easy copying and editing. Works on any device.",
-    icon: "📄"
-  }
-];
-
-const painPoints = [
-  {
-    icon: "⏰",
-    title: "Drowning in Busywork",
-    description: "Hours wasted on emails, reports, and repetitive tasks that should be faster."
-  },
-  {
-    icon: "🤔",
-    title: "AI Confusion",
-    description: "Everyone's talking about AI, but you don't know where to start. Prompts feel like guesswork."
-  },
-  {
-    icon: "📉",
-    title: "Inconsistent Results",
-    description: "When you try AI, output is hit-or-miss. No system, no consistency, no time saved."
-  }
-];
-
-const solutions = [
-  {
-    icon: "⚡",
-    title: "25 Battle-Tested Prompts",
-    description: "Proven prompts that eliminate busywork. Copy, paste, and watch the magic happen. Organized by category: Email, Reports, Content, Productivity, Research."
-  },
-  {
-    icon: "📋",
-    title: "10 Professional Templates",
-    description: "Done-for-you email templates for every situation. Cold outreach, follow-ups, saying no professionally, and more."
-  },
-  {
-    icon: "🎯",
-    title: "Clear Instructions",
-    description: "Each prompt includes usage instructions. Know exactly how to customize for your specific situation."
-  }
-];
+const title = "Zero Method — AI Prompts That Work";
+const description = "25 battle-tested prompts + 10 email templates. Save hours every week with proven AI workflows.";
 ---
 
 <Layout title={title} description={description}>
   <Header />
-
+  
   <main>
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/50 via-navy-950 to-navy-950"></div>
-      
-      <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-          <!-- Badge -->
-          <div class="inline-flex items-center px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 mb-8">
-            <span class="w-2 h-2 rounded-full bg-gold-500 mr-2"></span>
-            <span class="text-gold-400 text-sm font-medium">25 AI Prompts + 10 Email Templates</span>
-          </div>
-
-          <!-- Headline -->
-          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Save <span class="bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">5 Hours a Week</span>
-            <br />With Battle-Tested AI Prompts
+    <!-- Hero -->
+    <section class="hero" style="padding: 8rem 0; background: var(--color-bg);">
+      <div class="container">
+        <div style="max-width: 900px;">
+          <p style="color: var(--color-copper); font-family: var(--font-mono); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
+            AI Productivity Tools
+          </p>
+          
+          <h1 style="margin-bottom: 1.5rem;">
+            The prompts that<br>
+            actually work.
           </h1>
-
-          <!-- Subhead -->
-          <p class="text-lg sm:text-xl text-navy-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            25 proven prompts and 10 professional email templates. No videos, no fluff—just copy-paste ready resources that actually save time.
+          
+          <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px; margin-bottom: 2.5rem; line-height: 1.7;">
+            25 battle-tested AI prompts + 10 email templates. No fluff, no theory—just proven shortcuts that save you hours every week.
           </p>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a
-              href="/product"
-              class="inline-flex items-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-lg rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20"
-            >
-              Get the Pack — $19
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/product" class="btn btn-primary">Get the pack — $19</a>
+            <a href="#what-you-get" class="btn btn-secondary">See what's inside</a>
           </div>
-
-          <!-- Trust Signals -->
-          <div class="flex items-center justify-center space-x-6 text-navy-400 text-sm">
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>30-Day Guarantee</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Instant Download</span>
-            </div>
-            <div class="flex items-center">
-              <svg class="w-5 h-5 text-gold-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span>Free Updates (1 Year)</span>
-            </div>
+          
+          <div style="margin-top: 3rem; display: flex; gap: 2rem; font-size: 0.875rem; color: var(--color-text-muted);">
+            <span>✓ 30-day guarantee</span>
+            <span>✓ Instant download</span>
+            <span>✓ One-time purchase</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Grid -->
-    <section class="py-20 bg-navy-900/50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-            What's Included
-          </h2>
-          <p class="text-navy-400 text-lg">
-            Everything you need to start saving time with AI. Nothing you don't.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map(feature => (
-            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800 hover:border-gold-500/30 transition-colors duration-300">
-              <div class="text-4xl mb-4">{feature.icon}</div>
-              <h3 class="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-              <p class="text-navy-400 leading-relaxed">{feature.description}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
 
     <!-- Problem Section -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Sound Familiar?
-          </h2>
-          <p class="text-navy-400 text-lg">
-            You're busy. But are you actually productive?
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {painPoints.map(point => (
-            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800">
-              <div class="text-4xl mb-4">{point.icon}</div>
-              <h3 class="text-xl font-semibold text-white mb-3">{point.title}</h3>
-              <p class="text-navy-400 leading-relaxed">{point.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="py-20 bg-navy-900/50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <div class="inline-flex items-center px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/20 mb-6">
-            <span class="text-gold-400 text-sm font-medium">The Solution</span>
+    <section style="padding: 6rem 0; background: var(--color-bg-secondary);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div>
+            <p style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">The Problem</p>
+            
+            <h2 style="margin-bottom: 1.5rem;">
+              73% of professionals waste 2+ hours a day on tasks AI could handle.
+            </h2>
+            
+            <div class="copper-line" style="margin-bottom: 1.5rem;"></div>
+            
+            <p style="color: var(--color-text-secondary); line-height: 1.8;">
+              Writing prompts from scratch. Getting generic outputs. Starting over when sessions reset. There's a better way.
+            </p>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-            A Better Way
-          </h2>
-          <p class="text-navy-400 text-lg">
-            Everything you need to turn AI into your personal productivity engine.
-          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            {[
+              { icon: "✗", text: "Generic AI outputs that need complete rewrites" },
+              { icon: "✗", text: "Starting over when sessions reset" },
+              { icon: "✗", text: "Hours wasted on repetitive tasks" }
+            ].map(item => (
+              <div style="display: flex; align-items: center; gap: 1rem; padding: 1.25rem; background: var(--color-surface); border-radius: var(--radius-md);">
+                <span style="color: #c45c4a; font-size: 1.25rem;">{item.icon}</span>
+                <span style="color: var(--color-text-secondary);">{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {solutions.map(solution => (
-            <div class="p-8 bg-navy-900 rounded-2xl border border-navy-800 hover:border-gold-500/30 transition-colors duration-300">
-              <div class="text-4xl mb-4">{solution.icon}</div>
-              <h3 class="text-xl font-semibold text-white mb-3">{solution.title}</h3>
-              <p class="text-navy-400 leading-relaxed">{solution.description}</p>
+    <!-- What's Inside -->
+    <section id="what-you-get" style="padding: 8rem 0;">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+          <p style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">What's Inside</p>
+          <h2 style="margin-bottom: 1rem;">25 Prompts. 5 Categories. Zero Fluff.</h2>
+          <p style="color: var(--color-text-secondary);">Every prompt is tested, refined, and ready to use.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          {[
+            { title: "Email & Communication", count: "5 prompts", desc: "Professional emails that get responses" },
+            { title: "Reports & Documentation", count: "5 prompts", desc: "Clear documentation from any input" },
+            { title: "Content Creation", count: "5 prompts", desc: "Blog posts, social, marketing copy" },
+            { title: "Productivity", count: "5 prompts", desc: "Organization and task automation" },
+            { title: "Research & Analysis", count: "5 prompts", desc: "Data synthesis and insights" },
+            { title: "Email Templates", count: "10 templates", desc: "Cold outreach, follow-ups, meetings" }
+          ].map(cat => (
+            <div class="card" style="transition: transform 0.2s;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <h3 style="font-size: 1.125rem; font-weight: 500;">{cat.title}</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-copper); background: var(--color-bg-secondary); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm);">{cat.count}</span>
+              </div>
+              <p style="color: var(--color-text-muted); font-size: 0.9375rem;">{cat.desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Ready to Save 5 Hours Every Week?
-        </h2>
-        <p class="text-navy-400 text-lg mb-8 max-w-2xl mx-auto">
-          Get instant access to 25 proven AI prompts and 10 professional email templates. 
-          Copy, paste, and start saving time today.
+    <!-- How It Works -->
+    <section style="padding: 6rem 0; background: var(--color-bg-secondary);">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">
+          <p style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">How It Works</p>
+          <h2>Three steps. No learning curve.</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;">
+          {[
+            { num: "01", title: "Download", desc: "Instant delivery. PDF + Markdown files ready to use." },
+            { num: "02", title: "Find Your Prompt", desc: "5 categories, all indexed. Find what you need in 30 seconds." },
+            { num: "03", title: "Paste & Execute", desc: "Customize the brackets. Run it. Save 30-60 minutes per task." }
+          ].map(step => (
+            <div style="text-align: center;">
+              <div style="font-family: var(--font-heading); font-size: 4rem; font-weight: 600; color: var(--color-copper); opacity: 0.3; margin-bottom: 1rem;">{step.num}</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">{step.title}</h3>
+              <p style="color: var(--color-text-secondary); font-size: 0.9375rem;">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section style="padding: 8rem 0;">
+      <div class="container" style="max-width: 900px;">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; color: var(--color-copper); margin-bottom: 1.5rem;">"""</div>
+          <blockquote style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.4; margin-bottom: 2rem;">
+            I used to spend 45 minutes writing executive summaries. Now it takes 8. That's not a feature — that's a refund on my afternoon.
+          </blockquote>
+          
+          <div class="copper-line" style="margin: 0 auto 1.5rem;"></div>
+          
+          <p style="color: var(--color-text-muted); font-size: 0.9375rem;">— Sarah K., Operations Director</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section style="padding: 6rem 0; background: var(--color-bg-secondary);">
+      <div class="container" style="max-width: 600px; text-align: center;">
+        <p style="font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-copper); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Simple Pricing</p>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <span style="font-family: var(--font-heading); font-size: 4rem; font-weight: 600;">$19</span>
+          <span style="color: var(--color-text-muted); margin-left: 0.5rem;">one-time</span>
+        </div>
+        
+        <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
+          No subscription. No upsells. Just $19 once.
         </p>
         
-        <a
-          href="/product"
-          class="inline-flex items-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold text-lg rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20"
-        >
-          Get the Starter Pack — $19
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </a>
+        <ul style="list-style: none; text-align: left; max-width: 400px; margin: 0 auto 2rem;">
+          {[
+            "25 AI Prompts across 5 categories",
+            "10 professional email templates",
+            "PDF + Markdown formats",
+            "1 year of free updates",
+            "30-day money-back guarantee"
+          ].map(item => (
+            <li style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+              <span style="color: var(--color-copper);">✓</span>
+              <span style="color: var(--color-text-secondary);">{item}</span>
+            </li>
+          ))}
+        </ul>
         
-        <p class="mt-4 text-navy-400 text-sm">
+        <a href="/product" class="btn btn-primary" style="width: 100%; max-width: 300px;">Get the Pack — $19</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding: 6rem 0;">
+      <div class="container" style="max-width: 700px;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Frequently Asked</h2>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          {[
+            { q: "What's actually included?", a: "You get 25 AI prompts organized into 5 categories plus 10 professional email templates. Everything is delivered as both PDF and Markdown files for immediate use." },
+            { q: "Do I need technical skills?", a: "Not at all. If you can copy and paste, you can use these prompts. Simply copy the template, fill in your details, and paste into any AI tool." },
+            { q: "How do I receive the product?", a: "Instant download after purchase. You'll get a ZIP file with both PDF and Markdown versions. No waiting, no login portals." },
+            { q: "What if I'm not satisfied?", a: "30-day money-back guarantee. Email support@thezeromethod.com within 30 days for a full refund. No forms, no questions asked." }
+          ].map(faq => (
+            <details style="background: var(--color-bg-secondary); border-radius: var(--radius-md); overflow: hidden;">
+              <summary style="padding: 1.25rem; cursor: pointer; font-weight: 500; display: flex; justify-content: space-between; align-items: center;">
+                {faq.q}
+                <span style="color: var(--color-copper);">+</span>
+              </summary>
+              <div style="padding: 0 1.25rem 1.25rem; color: var(--color-text-secondary); line-height: 1.7;">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 6rem 0; background: var(--color-bg-secondary);">
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: 1rem;">Stop writing prompts from scratch.</h2>
+        <p style="color: var(--color-text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          Get 25 proven prompts and 10 templates. Start saving time today.
+        </p>
+        
+        <a href="/product" class="btn btn-primary">Get the Pack — $19</a>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--color-text-muted);">
           30-day money-back guarantee • Instant download
         </p>
       </div>
     </section>
   </main>
-
+  
   <Footer />
 </Layout>

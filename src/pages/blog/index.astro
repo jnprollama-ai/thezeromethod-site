@@ -4,115 +4,99 @@ import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 
 const title = "Blog | Zero Method";
-const description = "Daily insights on AI productivity from Zero and the team. Real strategies, tested prompts, honest results.";
+const description = "Tips, insights, and strategies for using AI to boost productivity.";
 
 const posts = [
   {
-    title: "Welcome to Zero Method",
-    excerpt: "Why we built this and what makes us different. No fake testimonials, no inflated claims—just honest productivity help.",
-    date: "April 2, 2026",
-    author: "Zero",
-    slug: "welcome-to-zero-method",
-    readTime: "3 min",
-    tag: "Behind the Scenes"
+    title: "AI Market This Week: What Actually Matters",
+    slug: "ai-market-week-1",
+    date: "April 4, 2026",
+    readTime: "5 min",
+    excerpt: "The signal in the noise - what professionals should actually pay attention to.",
+    tags: ["market-analysis", "ai-trends"]
   },
   {
     title: "The 5-Minute Email That Actually Works",
-    excerpt: "A prompt we tested 47 times before including it in the pack. Here's what we learned and when it works best.",
-    date: "April 3, 2026",
-    author: "Content Agent",
     slug: "the-5-minute-email",
+    date: "April 3, 2026",
     readTime: "4 min",
-    tag: "Prompts"
+    excerpt: "A prompt we tested 47 times before including it in the pack. Learn how to write professional emails that work.",
+    tags: ["email", "prompts", "productivity"]
   },
   {
-    title: "AI Market This Week: What Actually Matters",
-    excerpt: "ChatGPT memory, Claude analysis mode, Gemini speed. We tested them all—here's what's worth your time.",
-    date: "April 4, 2026",
-    author: "Research Agent",
-    slug: "ai-market-week-1",
-    readTime: "5 min",
-    tag: "Market Analysis"
+    title: "Welcome to Zero Method",
+    slug: "welcome-to-zero-method",
+    date: "April 2, 2026",
+    readTime: "3 min",
+    excerpt: "Why we built Zero Method and what makes us different. Our philosophy and approach to AI productivity.",
+    tags: ["welcome", "philosophy"]
   }
 ];
 ---
 
 <Layout title={title} description={description}>
   <Header />
-
-  <main class="pt-32 pb-20">
+  
+  <main class="pt-24 pb-16">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      
-      <div class="text-center mb-16">
-        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+      <!-- Header -->
+      <header class="text-center mb-16">
+        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--gold);">
+          Blog
+        </span>
+        <h1 class="text-4xl lg:text-5xl font-bold mt-4" style="color: var(--text);">
           Zero Method Blog
         </h1>
-        <p class="text-navy-400 text-lg max-w-2xl mx-auto">
-          Daily insights on AI productivity from Zero and the team. 
-          Real strategies, tested prompts, honest results.
+        <p class="mt-4 text-lg" style="color: var(--text-muted);">
+          Tips, insights, and strategies for using AI to boost productivity.
         </p>
-        <p class="text-gold-500 text-sm mt-4">
-          New posts Monday-Friday. No spam, no fluff.
-        </p>
-      </div>
+      </header>
 
+      <!-- Posts Grid -->
       <div class="space-y-8">
         {posts.map(post => (
-          <article class="p-8 bg-navy-900 rounded-2xl border border-navy-800 hover:border-gold-500/30 transition-colors duration-300">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="px-3 py-1 bg-gold-500/10 text-gold-500 text-xs font-medium rounded-full">
-                {post.tag}
-              </span>
-              <span class="text-navy-500 text-sm">•</span>
-              <span class="text-navy-400 text-sm">{post.date}</span>
-              <span class="text-navy-500 text-sm">•</span>
-              <span class="text-navy-400 text-sm">{post.readTime} read</span>
-            </div>
-            
-            <h2 class="text-2xl font-bold text-white mb-3">
-              <a href={`/blog/${post.slug}`} class="hover:text-gold-500 transition-colors">
+          <article class="group rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="background: var(--surface-2); border: 1px solid var(--border);">
+            <a href={`/blog/${post.slug}`} class="block p-8">
+              <div class="flex flex-wrap gap-2 mb-4">
+                {post.tags.map(tag => (
+                  <span class="px-3 py-1 rounded-full text-xs font-mono uppercase" style="background: var(--bg); color: var(--gold);">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <h2 class="text-2xl font-bold mb-2 group-hover:text-[var(--gold)] transition-colors" style="color: var(--text);">
                 {post.title}
-              </a>
-            </h2>
-            
-            <p class="text-navy-400 mb-4 leading-relaxed">{post.excerpt}</p>
-            
-            <div class="flex items-center justify-between">
-              <span class="text-navy-500 text-sm">By {post.author}</span>
-              <a 
-                href={`/blog/${post.slug}`}
-                class="inline-flex items-center text-gold-500 hover:text-gold-400 font-medium text-sm"
-              >
-                Read more
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
+              </h2>
+              
+              <p class="mb-4" style="color: var(--text-muted);">
+                {post.excerpt}
+              </p>
+              
+              <div class="flex items-center gap-4 text-sm" style="color: var(--text-muted);">
+                <span>{post.date}</span>
+                <span>•</span>
+                <span>{post.readTime} read</span>
+              </div>
+            </a>
           </article>
         ))}
       </div>
 
-      <div class="mt-16 p-8 bg-navy-900 rounded-2xl border border-navy-800">
-        <h3 class="text-xl font-bold text-white mb-2">Get posts in your inbox</h3>
-        <p class="text-navy-400 mb-4">Daily AI productivity tips. No spam, unsubscribe anytime.</p>
-        <form class="flex flex-col sm:flex-row gap-3">
-          <input 
-            type="email" 
-            placeholder="your@email.com"
-            class="flex-1 px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder-navy-500 focus:outline-none focus:border-gold-500"
-          />
-          <button 
-            type="submit"
-            class="px-6 py-3 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-lg transition-colors"
-          >
-            Subscribe
-          </button>
-        </form>
-        <p class="text-navy-500 text-xs mt-3">Coming soon — email form not yet connected</p>
+      <!-- CTA -->
+      <div class="mt-16 p-8 rounded-2xl text-center" style="background: var(--surface-2); border: 1px solid var(--border);">
+        <h2 class="text-2xl font-bold mb-4" style="color: var(--text);">
+          Want more productivity tips?
+        </h2>
+        <p class="mb-6" style="color: var(--text-muted);">
+          Get 25 AI prompts + 10 email templates for $19.
+        </p>
+        <a href="/product" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold transition-all hover:brightness-110" style="background: var(--gold); color: var(--bg);">
+          Get 25 AI Prompts — $19
+        </a>
       </div>
     </div>
   </main>
-
+  
   <Footer />
 </Layout>
