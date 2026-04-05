@@ -194,6 +194,11 @@ const posts = {
 };
 
 const post = posts[slug];
+
+// Handle 404 for unknown slugs
+if (!post) {
+  return Astro.redirect('/blog');
+}
 ---
 
 <Layout title={`${post.title} | Zero Method Blog`} description={post.title}>

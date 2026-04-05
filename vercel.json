@@ -1,8 +1,28 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/blog/(.*)", "dest": "/blog/$1" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+    {
+      "src": "/blog/([^/]+)",
+      "dest": "/blog/$1/index.html"
+    },
+    {
+      "src": "/blog",
+      "dest": "/blog/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
