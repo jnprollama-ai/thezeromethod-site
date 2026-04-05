@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command Center | Zero Method</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --obsidian: #0A0A0F;
+      --void: #141418;
+      --gold: #F59E0B;
+      --amber: #FBBF24;
+      --white: #FFFFFF;
+      --smoke: #A1A1AA;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--obsidian);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    .glass {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+    }
+    .card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--amber), var(--gold));
+      color: #000;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
+    }
+    .status-pending { background: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+    .status-approved { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+    .status-published { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+    .tab-active { border-bottom: 2px solid #F59E0B; color: #F59E0B; }
+    .tab-inactive { color: #71717A; }
+    .tab-inactive:hover { color: #A1A1AA; }
+    .agent-avatar { background: linear-gradient(135deg, #F59E0B, #FBBF24); }
+    .agent-vesper { background: linear-gradient(135deg, #8B5CF6, #A78BFA); }
+    .agent-mace { background: linear-gradient(135deg, #EF4444, #F87171); }
+    .agent-lena { background: linear-gradient(135deg, #10B981, #34D399); }
+    .agent-rex { background: linear-gradient(135deg, #3B82F6, #60A5FA); }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0F; }
+    ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
+    
+    /* Animations */
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+    }
+    .pulse-indicator { animation: pulse-gold 2s infinite; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+          <span class="text-black font-bold text-sm">⌘</span>
+        </div>
+        <span class="font-semibold">Command Center</span>
+        <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 text-xs">V2.0</span>
+      </div>
+      
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 text-sm text-gray-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-indicator"></span>
+          <span>System Online</span>
+        </div>
+        <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Exit →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="pt-24 pb-8 px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Stats Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="card rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <i data-lucide="file-text" class="w-5 h-5 text-amber-400"></i>
+            <span class="text-sm text-gray-400">Pending Review</span>
+          </div>
+          <div class="text-3xl font-bold">2</div>
+        </div>
+        
+        <div class="card rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+            <span class="text-sm text-gray-400">Published</span>
+          </div>
+          <div class="text-3xl font-bold">3</div>
+        </div>
+        
+        <div class="card rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+            <span class="text-sm text-gray-400">Active Agents</span>
+          </div>
+          <div class="text-3xl font-bold">5</div>
+        </div>
+        
+        <div class="card rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <i data-lucide="activity" class="w-5 h-5 text-violet-400"></i>
+            <span class="text-sm text-gray-400">API Status</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+            <span class="text-lg font-semibold text-emerald-400">Healthy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex gap-8 border-b border-white/10 mb-8">
+        <button class="pb-4 tab-active font-medium">Blog Pipeline</button>
+        <button class="pb-4 tab-inactive font-medium transition-colors">Agents</button>
+        <button class="pb-4 tab-inactive font-medium transition-colors">Analytics</button>
+        <button class="pb-4 tab-inactive font-medium transition-colors">Settings</button>
+      </div>
+
+      <!-- Blog Pipeline Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Pending -->
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold">Pending Review</h2>
+            <span class="px-2 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-medium">2</span>
+          </div>
+          
+          <div class="space-y-4">
+            <!-- Draft 1 -->
+            <div class="card rounded-xl p-4 cursor-pointer hover:border-amber-500/30">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg agent-vesper flex items-center justify-center text-black font-bold text-sm">V</div>
+                <div class="flex-1">
+                  <div class="font-medium mb-1">AI Tools Roundup: April 2026</div>
+                  <div class="text-sm text-gray-400 mb-2">By Vesper • Draft created</div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-400 text-xs">Research</span>
+                    <span class="text-xs text-gray-500">800 words</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex gap-2 mt-4">
+                <button class="flex-1 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-medium hover:bg-emerald-500/20 transition-colors">
+                  Approve
+                </button>
+                <button class="flex-1 py-2 rounded-lg bg-white/5 text-gray-400 text-sm font-medium hover:bg-white/10 transition-colors">
+                  Review
+                </button>
+              </div>
+            </div>
+
+            <!-- Draft 2 -->
+            <div class="card rounded-xl p-4 cursor-pointer hover:border-amber-500/30">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg agent-lena flex items-center justify-center text-black font-bold text-sm">L</div>
+                <div class="flex-1">
+                  <div class="font-medium mb-1">Email Templates Deep Dive</div>
+                  <div class="text-sm text-gray-400 mb-2">By Lena • Awaiting approval</div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs">Email</span>
+                    <span class="text-xs text-gray-500">1,200 words</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex gap-2 mt-4">
+                <button class="flex-1 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-medium hover:bg-emerald-500/20 transition-colors">
+                  Approve
+                </button>
+                <button class="flex-1 py-2 rounded-lg bg-white/5 text-gray-400 text-sm font-medium hover:bg-white/10 transition-colors">
+                  Review
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Approved -->
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold">Approved</h2>
+            <span class="px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">1</span>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="card rounded-xl p-4 border-emerald-500/20">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg agent-mace flex items-center justify-center text-black font-bold text-sm">M</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <div class="font-medium">Productivity Framework 2026</div>
+                    <span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs">✓</span>
+                  </div>
+                  <div class="text-sm text-gray-400 mb-2">By Mace • Approved 2h ago</div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 text-xs">Productivity</span>
+                  </div>
+                </div>
+              </div>
+              
+              <button class="w-full mt-4 py-2 rounded-lg bg-amber-500/10 text-amber-400 text-sm font-medium hover:bg-amber-500/20 transition-colors">
+                Publish Now →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Published -->
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold">Published</h2>
+            <span class="px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-medium">3</span>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="card rounded-xl p-4 border-blue-500/20">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg agent-rex flex items-center justify-center text-black font-bold text-sm">R</div>
+                <div class="flex-1">
+                  <div class="font-medium mb-1">AI Market This Week</div>
+                  <div class="text-sm text-gray-400 mb-2">By Research Agent • Live</div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="flex items-center gap-1 text-gray-500">
+                      <i data-lucide="eye" class="w-3 h-3"></i> 1,247 views
+                    </span>
+                    <span class="flex items-center gap-1 text-gray-500">
+                      <i data-lucide="share-2" class="w-3 h-3"></i> 89 shares
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex gap-2 mt-4">
+                <a href="/blog/ai-market-week-1" class="flex-1 py-2 rounded-lg bg-blue-500/10 text-blue-400 text-sm font-medium text-center hover:bg-blue-500/20 transition-colors">
+                  View Live →
+                </a>
+              </div>
+            </div>
+
+            <div class="card rounded-xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-black font-bold text-sm">0</div>
+                <div class="flex-1">
+                  <div class="font-medium mb-1">Welcome to Zero Method</div>
+                  <div class="text-sm text-gray-400 mb-2">By Zero • Live</div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="flex items-center gap-1 text-gray-500">
+                      <i data-lucide="eye" class="w-3 h-3"></i> 2,891 views
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card rounded-xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg agent-lena flex items-center justify-center text-black font-bold text-sm">L</div>
+                <div class="flex-1">
+                  <div class="font-medium mb-1">The 5-Minute Email</div>
+                  <div class="text-sm text-gray-400 mb-2">By Content Agent • Live</div>
+                  <div class="flex items-center gap-3 text-xs">
+                    <span class="flex items-center gap-1 text-gray-500">
+                      <i data-lucide="eye" class="w-3 h-3"></i> 3,456 views
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent Status Section -->
+      <div class="mt-12">
+        <h2 class="font-semibold mb-6">Active Agents</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="card rounded-xl p-4 text-center">
+            <div class="w-12 h-12 rounded-lg agent-vesper mx-auto mb-3 flex items-center justify-center text-black font-bold">V</div>
+            <div class="font-medium">Vesper</div>
+            <div class="text-xs text-gray-400">Creative</div>
+            <div class="mt-2 flex items-center justify-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-xs text-emerald-400">Active</span>
+            </div>
+          </div>
+
+          <div class="card rounded-xl p-4 text-center">
+            <div class="w-12 h-12 rounded-lg agent-mace mx-auto mb-3 flex items-center justify-center text-black font-bold">M</div>
+            <div class="font-medium">Mace</div>
+            <div class="text-xs text-gray-400">Strategy</div>
+            <div class="mt-2 flex items-center justify-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-xs text-emerald-400">Active</span>
+            </div>
+          </div>
+
+          <div class="card rounded-xl p-4 text-center">
+            <div class="w-12 h-12 rounded-lg agent-lena mx-auto mb-3 flex items-center justify-center text-black font-bold">L</div>
+            <div class="font-medium">Lena</div>
+            <div class="text-xs text-gray-400">Editorial</div>
+            <div class="mt-2 flex items-center justify-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span class="text-xs text-amber-400">Working</span>
+            </div>
+          </div>
+
+          <div class="card rounded-xl p-4 text-center">
+            <div class="w-12 h-12 rounded-lg agent-rex mx-auto mb-3 flex items-center justify-center text-black font-bold">R</div>
+            <div class="font-medium">Rex</div>
+            <div class="text-xs text-gray-400">Research</div>
+            <div class="mt-2 flex items-center justify-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-xs text-emerald-400">Active</span>
+            </div>
+          </div>
+
+          <div class="card rounded-xl p-4 text-center">
+            <div class="w-12 h-12 rounded-lg bg-white mx-auto mb-3 flex items-center justify-center text-black font-bold">0</div>
+            <div class="font-medium">Zero</div>
+            <div class="text-xs text-gray-400">Director</div>
+            <div class="mt-2 flex items-center justify-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-xs text-emerald-400">Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
