@@ -64,7 +64,7 @@ const posts = [
       padding: 24px;
       transition: all 0.4s ease;
       text-decoration: none;
-      color: inherit;
+      color: var(--white);
       display: block;
     }
     .card:hover {
@@ -91,6 +91,47 @@ const posts = [
       transform: translateY(-2px);
       box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.4);
     }
+    /* Blog list styling */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    @media (min-width: 768px) {
+      .blog-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 140px;
+    }
+    .blog-content {
+      flex: 1;
+    }
+    .blog-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .blog-excerpt {
+      color: var(--smoke);
+      font-size: 0.875rem;
+    }
+    .arrow {
+      color: var(--gold);
+      font-size: 1.25rem;
+    }
   </style>
 </head>
 <body>
@@ -104,8 +145,10 @@ const posts = [
         <span class="font-semibold text-white">Zero Method</span>
       </a>
       
-      <div class="flex items-center gap-8">
-        <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">← Back to Home</a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1">
+          <span>←</span> Back to Home
+        </a>
         <a href="/product" class="btn-primary text-sm px-5 py-2.5">Get Started</a>
       </div>
     </div>
@@ -120,47 +163,41 @@ const posts = [
         <p class="text-gray-400 mt-4">Tips, insights, and strategies for using AI to boost productivity.</p>
       </div>
 
-      <div class="space-y-6">
-        <a href="/blog/ai-market-week-1" class="card hover:border-amber-500/30">
-          <div class="flex flex-col md:flex-row md:items-center gap-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400">Analysis</span>
-              <span class="text-xs text-gray-500">5 min</span>
-            </div>
-            <div class="flex-1">
-              <h2 class="text-xl font-semibold mb-2 text-white">AI Market This Week: What Actually Matters</h2>
-              <p class="text-gray-400 text-sm">The signal in the noise — what professionals should actually pay attention to this week.</p>
-            </div>
-            <span class="text-amber-400">→</span>
+      <div class="blog-list">
+        <a href="/blog/ai-market-week-1" class="card blog-card hover:border-amber-500/30">
+          <div class="blog-meta">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-xs text-amber-400 whitespace-nowrap">Analysis</span>
+            <span class="text-xs text-gray-500">5 min</span>
           </div>
+          <div class="blog-content">
+            <div class="blog-title">AI Market This Week: What Actually Matters</div>
+            <div class="blog-excerpt">The signal in the noise — what professionals should actually pay attention to this week.</div>
+          </div>
+          <span class="arrow">→</span>
         </a>
 
-        <a href="/blog/the-5-minute-email" class="card hover:border-blue-500/30">
-          <div class="flex flex-col md:flex-row md:items-center gap-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-xs text-blue-400">Email</span>
-              <span class="text-xs text-gray-500">4 min</span>
-            </div>
-            <div class="flex-1">
-              <h2 class="text-xl font-semibold mb-2 text-white">The 5-Minute Email That Actually Works</h2>
-              <p class="text-gray-400 text-sm">A prompt we tested 47 times before including it in the pack.</p>
-            </div>
-            <span class="text-amber-400">→</span>
+        <a href="/blog/the-5-minute-email" class="card blog-card hover:border-blue-500/30">
+          <div class="blog-meta">
+            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-xs text-blue-400 whitespace-nowrap">Email</span>
+            <span class="text-xs text-gray-500">4 min</span>
           </div>
+          <div class="blog-content">
+            <div class="blog-title">The 5-Minute Email That Actually Works</div>
+            <div class="blog-excerpt">A prompt we tested 47 times before including it in the pack.</div>
+          </div>
+          <span class="arrow">→</span>
         </a>
 
-        <a href="/blog/welcome-to-zero-method" class="card hover:border-emerald-500/30">
-          <div class="flex flex-col md:flex-row md:items-center gap-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-400">Welcome</span>
-              <span class="text-xs text-gray-500">3 min</span>
-            </div>
-            <div class="flex-1">
-              <h2 class="text-xl font-semibold mb-2 text-white">Welcome to Zero Method</h2>
-              <p class="text-gray-400 text-sm">Why we built this and what makes us different.</p>
-            </div>
-            <span class="text-amber-400">→</span>
+        <a href="/blog/welcome-to-zero-method" class="card blog-card hover:border-emerald-500/30">
+          <div class="blog-meta">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-xs text-emerald-400 whitespace-nowrap">Welcome</span>
+            <span class="text-xs text-gray-500">3 min</span>
           </div>
+          <div class="blog-content">
+            <div class="blog-title">Welcome to Zero Method</div>
+            <div class="blog-excerpt">Why we built this and what makes us different.</div>
+          </div>
+          <span class="arrow">→</span>
         </a>
       </div>
     </div>
