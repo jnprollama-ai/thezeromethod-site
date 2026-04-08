@@ -1,0 +1,232 @@
+﻿---
+const posts = [
+  {
+    title: "AI Tools We Actually Use (And the Ones We Dropped)",
+    slug: "ai-tools-we-use",
+    category: "Research",
+    readTime: "6 min read",
+    excerpt: "No hype. Just the tools that survived 3 months of daily use ΓÇö and the overhyped ones that didn't."
+  },
+  {
+    title: "The Prompt That Changed Everything",
+    slug: "the-prompt-that-changed-everything",
+    category: "Productivity",
+    readTime: "3 min read",
+    excerpt: "One simple prompt structure that works across every AI tool. We tested 50 variations so you don't have to."
+  },
+  {
+    title: "How We Write a Blog Post in 30 Minutes",
+    slug: "30-minute-blog-post",
+    category: "Productivity",
+    readTime: "5 min read",
+    excerpt: "Our exact workflow ΓÇö from idea to publish without the fluff. No 4-hour writing sessions."
+  },
+  {
+    title: "The 5-Minute Email System That Actually Works",
+    slug: "5-minute-email-system",
+    category: "Email",
+    readTime: "4 min read",
+    excerpt: "Stop spending 30 minutes on emails. Here's a system that cuts it to 5. We tested it with 12 people."
+  },
+  {
+    title: "AI Market This Week: What Actually Matters",
+    slug: "ai-market-week-1",
+    category: "Research",
+    readTime: "5 min read",
+    excerpt: "The signal in the noise ΓÇö what professionals should actually pay attention to this week."
+  },
+  {
+    title: "How to Build an AI Automation Workflow That Saves 10+ Hours Weekly",
+    slug: "ai-automation-workflow-guide",
+    category: "Tutorial",
+    readTime: "12 min read",
+    excerpt: "Step-by-step guide to creating your first AI-powered automation system. Includes ChatGPT prompts and real case studies."
+  },
+  {
+    title: "The Complete Guide to API Integrations & Automation Workflows",
+    slug: "api-integration-automation-guide",
+    category: "Tutorial",
+    readTime: "18 min read",
+    excerpt: "Master API integrations and automation workflows. Step-by-step tutorials with code examples and production-ready patterns."
+  },
+  {
+    title: "15 Professional Email Templates That Actually Get Responses",
+    slug: "15-email-templates-that-get-responses",
+    category: "Email",
+    readTime: "15 min read",
+    excerpt: "Stop writing emails from scratch. Get 15 proven professional email templates for cold outreach, follow-ups, and networking."
+  },
+  {
+    title: "The April 2026 AI Productivity Stack: 7 Battle-Tested Tools",
+    slug: "ai-productivity-stack-april-2026",
+    category: "Research",
+    readTime: "12 min read",
+    excerpt: "Discover the 7 AI tools professionals are actually using in April 2026. Real productivity gains, pricing breakdown, and implementation guides."
+  },
+  {
+    title: "The 2026 AI Productivity Forecast: 5 Beta Trends Early Adopters Are Using",
+    slug: "ai-productivity-forecast-2026",
+    category: "Research",
+    readTime: "9 min read",
+    excerpt: "Exclusive look at the experimental AI tools and workflows that will define productivity in 2026."
+  },
+  {
+    title: "The AI Productivity Gap: Why 91% of Businesses Use AI But Only 20% See Results",
+    slug: "ai-productivity-gap-2026",
+    category: "Research",
+    readTime: "8 min read",
+    excerpt: "New research reveals a stark contradiction. Here's what the data reveals and how to close the gap."
+  },
+  {
+    title: "Success Stories: How 3 Professionals Cut 20+ Hours From Their Workweek",
+    slug: "success-stories-april-2026",
+    category: "Case Study",
+    readTime: "7 min read",
+    excerpt: "Real stories from operations directors, marketing managers, and consultants who reclaimed their time using AI prompts."
+  }
+];
+
+const categories = ["All", "Research", "Productivity", "Email", "Case Study", "Tutorial"];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Zero Method</title>
+  <meta name="description" content="Tips, insights, and strategies for using AI to boost productivity." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obsidian: #0A0A0F;
+      --void: #141418;
+      --gold: #F59E0B;
+      --amber: #FBBF24;
+      --white: #FFFFFF;
+      --smoke: #A1A1AA;
+      --slate: #71717A;
+      --ink: #27272A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--obsidian);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--ink);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-mark { width: 32px; height: 32px; background: linear-gradient(135deg, var(--gold), var(--amber)); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark span { color: var(--obsidian); font-weight: 800; font-size: 16px; }
+    .logo-text { font-weight: 700; font-size: 1.25rem; color: var(--white); }
+    .logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { color: var(--smoke); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    
+    /* Hero */
+    .hero { padding: 120px 0 60px; text-align: center; }
+    .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { color: var(--smoke); font-size: 1.125rem; max-width: 600px; margin: 0 auto; }
+    
+    /* Categories */
+    .categories { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .category-btn { padding: 8px 16px; border-radius: 999px; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: all 0.2s; border: none; }
+    .category-btn.active { background: var(--gold); color: var(--obsidian); }
+    .category-btn:not(.active) { background: var(--void); color: var(--smoke); border: 1px solid var(--ink); }
+    .category-btn:not(.active):hover { border-color: var(--gold); color: var(--gold); }
+    
+    /* Blog Grid */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; margin-bottom: 80px; }
+    .blog-card { background: var(--void); border: 1px solid var(--ink); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; text-decoration: none; display: block; }
+    .blog-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .blog-card-image { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--void), var(--ink)); display: flex; align-items: center; justify-content: center; position: relative; }
+    .blog-card-image::before { content: "≡ƒô¥"; font-size: 48px; opacity: 0.5; }
+    .blog-card:hover .blog-card-image::before { opacity: 1; }
+    .blog-card-content { padding: 24px; }
+    .blog-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .blog-card-category { background: rgba(245, 158, 11, 0.1); color: var(--gold); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+    .blog-card-readtime { color: var(--slate); font-size: 0.75rem; }
+    .blog-card-title { font-size: 1.125rem; font-weight: 600; color: var(--white); margin-bottom: 8px; line-height: 1.4; }
+    .blog-card:hover .blog-card-title { color: var(--gold); }
+    .blog-card-excerpt { color: var(--smoke); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+    .blog-card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .blog-card-date { color: var(--slate); font-size: 0.8rem; }
+    .blog-card-link { color: var(--gold); font-weight: 500; font-size: 0.875rem; display: flex; align-items: center; gap: 4px; }
+    
+    /* Footer */
+    footer { border-top: 1px solid var(--ink); padding: 40px 0; text-align: center; color: var(--slate); font-size: 0.875rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="/" class="logo">
+        <div class="logo-mark"><span>0</span></div>
+        <div class="logo-text">Zero<span>Method</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/product">Product</a>
+        <a href="/blog" class="active">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Zero Method <span>Blog</span></h1>
+        <p>Practical AI productivity strategies. No fluff. Real results.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="categories">
+        {categories.map((cat, i) => (
+          <button class={`category-btn ${i === 0 ? 'active' : ''}`}>{cat}</button>
+        ))}
+      </div>
+
+      <div class="blog-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="blog-card">
+            <div class="blog-card-image"></div>
+            <div class="blog-card-content">
+              <div class="blog-card-meta">
+                <span class="blog-card-category">{post.category}</span>
+                <span class="blog-card-readtime">{post.readTime}</span>
+              </div>
+              <h2 class="blog-card-title">{post.title}</h2>
+              <p class="blog-card-excerpt">{post.excerpt}</p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">Apr 2026</span>
+                <span class="blog-card-link">Read more ΓåÆ</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>┬⌐ 2026 Zero Method. Built with <a href="https://astro.build">Astro</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
