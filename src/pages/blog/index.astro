@@ -1,20 +1,6 @@
 ---
 const posts = [
   {
-    title: "The April 2026 AI Productivity Stack: 7 Battle-Tested Tools",
-    slug: "ai-productivity-stack-april-2026",
-    category: "Research",
-    readTime: "12 min read",
-    excerpt: "Discover the 7 AI tools professionals are actually using in April 2026. Real productivity gains, pricing breakdown, and ROI analysis for Claude 4, Gemini 2.5 Pro, ChatGPT-5, and more."
-  },
-  {
-    title: "From 60-Hour Weeks to 40: How 3 Professionals Reclaimed Their Time",
-    slug: "success-stories-reclaimed-time",
-    category: "Success Stories",
-    readTime: "7 min read",
-    excerpt: "Real stories from operations directors, marketing managers, and consultants who cut 20+ hours from their workweek using AI prompts."
-  },
-  {
     title: "AI Tools We Actually Use (And the Ones We Dropped)",
     slug: "ai-tools-we-use",
     category: "Research",
@@ -71,6 +57,13 @@ const posts = [
     excerpt: "Stop writing emails from scratch. Get 15 proven professional email templates for cold outreach, follow-ups, and networking."
   },
   {
+    title: "The April 2026 AI Productivity Stack: 7 Battle-Tested Tools",
+    slug: "ai-productivity-stack-april-2026",
+    category: "Research",
+    readTime: "12 min read",
+    excerpt: "Discover the 7 AI tools professionals are actually using in April 2026. Real productivity gains, pricing breakdown, and ROI analysis."
+  },
+  {
     title: "The 2026 AI Productivity Forecast: 5 Beta Trends Early Adopters Are Using",
     slug: "ai-productivity-forecast-2026",
     category: "Research",
@@ -83,6 +76,13 @@ const posts = [
     category: "Research",
     readTime: "8 min read",
     excerpt: "New research reveals a stark contradiction. Here's what the data reveals — and how to close the gap."
+  },
+  {
+    title: "Success Stories: How 3 Professionals Cut 20+ Hours From Their Workweek",
+    slug: "success-stories-april-2026",
+    category: "Case Study",
+    readTime: "7 min read",
+    excerpt: "Real stories from operations directors, marketing managers, and consultants who reclaimed their time using AI prompts."
   }
 ];
 
@@ -149,84 +149,101 @@ const categories = ["All", "Research", "Productivity", "Email", "Case Study", "T
     .category-btn:not(.active):hover { border-color: var(--gold); color: var(--gold); }
     
     /* Blog Grid */
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; margin-bottom: 80px; }
-    .blog-card { background: var(--void); border: 1px solid var(--ink); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; text-decoration: none; display: block; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; margin-bottom: 80px; }
+    .blog-card { background: var(--void); border: 1px solid var(--ink); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; text-decoration: none; color: inherit; }
     .blog-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .blog-card-image { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--void), var(--ink)); display: flex; align-items: center; justify-content: center; position: relative; }
-    .blog-card-image::before { content: "📝"; font-size: 48px; opacity: 0.5; }
-    .blog-card:hover .blog-card-image::before { opacity: 1; }
+    .blog-card-image { height: 200px; background: linear-gradient(135deg, var(--void), var(--ink)); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
     .blog-card-content { padding: 24px; }
-    .blog-card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .blog-card-category { background: rgba(245, 158, 11, 0.1); color: var(--gold); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
-    .blog-card-readtime { color: var(--slate); font-size: 0.75rem; }
-    .blog-card-title { font-size: 1.125rem; font-weight: 600; color: var(--white); margin-bottom: 8px; line-height: 1.4; }
-    .blog-card:hover .blog-card-title { color: var(--gold); }
-    .blog-card-excerpt { color: var(--smoke); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
-    .blog-card-footer { display: flex; justify-content: space-between; align-items: center; }
-    .blog-card-date { color: var(--slate); font-size: 0.8rem; }
-    .blog-card-link { color: var(--gold); font-weight: 500; font-size: 0.875rem; display: flex; align-items: center; gap: 4px; }
+    .blog-card-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+    .blog-card-category { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); }
+    .blog-card-readtime { font-size: 0.75rem; color: var(--slate); }
+    .blog-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+    .blog-card p { color: var(--smoke); font-size: 0.9rem; line-height: 1.6; }
     
     /* Footer */
-    footer { border-top: 1px solid var(--ink); padding: 40px 0; text-align: center; color: var(--slate); font-size: 0.875rem; }
-    footer a { color: var(--gold); text-decoration: none; }
+    footer { padding: 60px 0; border-top: 1px solid var(--ink); text-align: center; }
+    footer p { color: var(--slate); font-size: 0.875rem; }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
   </style>
 </head>
 <body>
   <header>
     <nav class="container">
       <a href="/" class="logo">
-        <div class="logo-mark"><span>0</span></div>
-        <div class="logo-text">Zero<span>Method</span></div>
+        <div class="logo-mark"><span>Z</span></div>
+        <span class="logo-text">Zero<span>Method</span></span>
       </a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/product">Product</a>
         <a href="/blog" class="active">Blog</a>
+        <a href="/product">Products</a>
+        <a href="/about">About</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Zero Method <span>Blog</span></h1>
-        <p>Practical AI productivity strategies. No fluff. Real results.</p>
-      </div>
-    </section>
-
+  <section class="hero">
     <div class="container">
-      <div class="categories">
-        {categories.map((cat, i) => (
-          <button class={`category-btn ${i === 0 ? 'active' : ''}`}>{cat}</button>
-        ))}
-      </div>
-
-      <div class="blog-grid">
-        {posts.map(post => (
-          <a href={`/blog/${post.slug}`} class="blog-card">
-            <div class="blog-card-image"></div>
-            <div class="blog-card-content">
-              <div class="blog-card-meta">
-                <span class="blog-card-category">{post.category}</span>
-                <span class="blog-card-readtime">{post.readTime}</span>
-              </div>
-              <h2 class="blog-card-title">{post.title}</h2>
-              <p class="blog-card-excerpt">{post.excerpt}</p>
-              <div class="blog-card-footer">
-                <span class="blog-card-date">Apr 2026</span>
-                <span class="blog-card-link">Read more →</span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+      <h1>Latest from the <span>Blog</span></h1>
+      <p>Tips, insights, and strategies for using AI to boost productivity.</p>
     </div>
-  </main>
+  </section>
+
+  <div class="container">
+    <div class="categories">
+      {categories.map(cat => (
+        <button class={`category-btn ${cat === 'All' ? 'active' : ''}`} data-category={cat}>{cat}</button>
+      ))}
+    </div>
+
+    <div class="blog-grid">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="blog-card" data-category={post.category}>
+          <div class="blog-card-image">📝</div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span class="blog-card-category">{post.category}</span>
+              <span class="blog-card-readtime">{post.readTime}</span>
+            </div>
+            <h3>{post.title}</h3>
+            <p>{post.excerpt}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
 
   <footer>
     <div class="container">
-      <p>© 2026 Zero Method. Built with <a href="https://astro.build">Astro</a>.</p>
+      <p>&copy; 2026 Zero Method. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Category filtering
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        blogCards.forEach(card => {
+          if (category === 'All' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
