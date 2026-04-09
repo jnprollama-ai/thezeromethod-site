@@ -1,54 +1,300 @@
 ---
-import AiToolsWeUse from './ai-tools-we-use.astro';
-import ThePrompt from './the-prompt-that-changed-everything.astro';
-import BlogPost30Min from './30-minute-blog-post.astro';
-import EmailSystem from './5-minute-email-system.astro';
-import AiMarketWeek from './ai-market-week-1.astro';
-import AiAutomationWorkflow from './ai-automation-workflow-guide.astro';
-import ApiIntegration from './api-integration-automation-guide.astro';
-import EmailTemplates from './15-email-templates-that-get-responses.astro';
-import AiProductivityStack from './ai-productivity-stack-april-2026.astro';
-import AiForecast from './ai-productivity-forecast-2026.astro';
-import AiGap from './ai-productivity-gap-2026.astro';
-import SuccessStories from './success-stories-april-2026.astro';
-
-export async function getStaticPaths() {
+export function getStaticPaths() {
   const posts = [
-    { slug: 'ai-tools-we-use', component: AiToolsWeUse },
-    { slug: 'the-prompt-that-changed-everything', component: ThePrompt },
-    { slug: '30-minute-blog-post', component: BlogPost30Min },
-    { slug: '5-minute-email-system', component: EmailSystem },
-    { slug: 'ai-market-week-1', component: AiMarketWeek },
-    { slug: 'ai-automation-workflow-guide', component: AiAutomationWorkflow },
-    { slug: 'api-integration-automation-guide', component: ApiIntegration },
-    { slug: '15-email-templates-that-get-responses', component: EmailTemplates },
-    { slug: 'ai-productivity-stack-april-2026', component: AiProductivityStack },
-    { slug: 'ai-productivity-forecast-2026', component: AiForecast },
-    { slug: 'ai-productivity-gap-2026', component: AiGap },
-    { slug: 'success-stories-april-2026', component: SuccessStories }
+    { slug: 'ai-tools-we-use', title: 'AI Tools We Actually Use (And the Ones We Dropped)', category: 'Research', readTime: '6 min', emoji: '🛠️', bg: 'linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(16,185,129,0.15) 100%)' },
+    { slug: 'the-prompt-that-changed-everything', title: 'The Prompt That Changed Everything', category: 'Productivity', readTime: '3 min', emoji: '💡', bg: 'linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(245,158,11,0.15) 100%)' },
+    { slug: '30-minute-blog-post', title: 'How We Write a Blog Post in 30 Minutes', category: 'Productivity', readTime: '5 min', emoji: '⚡', bg: 'linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(59,130,246,0.15) 100%)' },
+    { slug: '5-minute-email-system', title: 'The 5-Minute Email System That Actually Works', category: 'Email', readTime: '4 min', emoji: '✉️', bg: 'linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(16,185,129,0.15) 100%)' },
+    { slug: 'ai-market-week-1', title: 'AI Market This Week: What Actually Matters', category: 'Research', readTime: '5 min', emoji: '📈', bg: 'linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(239,68,68,0.15) 100%)' },
+    { slug: 'ai-automation-workflow-guide', title: 'How to Build an AI Automation Workflow', category: 'Tutorial', readTime: '12 min', emoji: '🤖', bg: 'linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(245,158,11,0.15) 100%)' },
+    { slug: 'api-integration-automation-guide', title: 'Complete Guide to API Integrations', category: 'Tutorial', readTime: '18 min', emoji: '🔌', bg: 'linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(59,130,246,0.15) 100%)' },
+    { slug: '15-email-templates-that-get-responses', title: '15 Professional Email Templates', category: 'Email', readTime: '15 min', emoji: '📧', bg: 'linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(16,185,129,0.15) 100%)' },
+    { slug: 'ai-productivity-stack-april-2026', title: 'The April 2026 AI Productivity Stack', category: 'Research', readTime: '12 min', emoji: '🎯', bg: 'linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(245,158,11,0.15) 100%)' },
+    { slug: 'ai-productivity-forecast-2026', title: 'The 2026 AI Productivity Forecast', category: 'Research', readTime: '9 min', emoji: '🔮', bg: 'linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(139,92,246,0.15) 100%)' },
+    { slug: 'ai-productivity-gap-2026', title: 'The AI Productivity Gap', category: 'Research', readTime: '8 min', emoji: '📊', bg: 'linear-gradient(135deg, rgba(239,68,68,0.2) 0%, rgba(245,158,11,0.15) 100%)' },
+    { slug: 'success-stories-april-2026', title: 'Success Stories: How 3 Professionals Cut 20+ Hours', category: 'Case Study', readTime: '7 min', emoji: '⭐', bg: 'linear-gradient(135deg, rgba(16,185,129,0.2) 0%, rgba(139,92,246,0.15) 100%)' }
   ];
-  return posts.map(post => ({ params: { slug: post.slug }, props: { component: post.component } }));
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 
-const { slug } = Astro.params;
-const { component: PostComponent } = Astro.props;
+const { post } = Astro.props;
+
+const getContent = (slug: string) => {
+  const contents: Record<string, string> = {
+    'ai-tools-we-use': `We've tested dozens of AI tools. Most overpromise and underdeliver. Here's what actually survived 3 months of daily use.
+
+## The Winners
+
+**Claude 4** - Complex reasoning, coding, and long-form writing. The gold standard for serious work.
+
+**ChatGPT** - General tasks, quick answers, brainstorming. Fast and capable for most everyday needs.
+
+**Perplexity** - Research that actually works. Cites sources, explores topics deeply.
+
+## The Ones We Dropped
+
+- "AI Everything" tools that do nothing well
+- Writing tools with generic output
+- Image generators with limited use cases
+
+## The Verdict
+
+The tool stack that matters: 2-3 quality tools, deeply integrated into workflows.`,
+
+    'the-prompt-that-changed-everything': `I used to write prompts like everyone else. Single questions, vague instructions, disappointing results.
+
+Then I discovered chain-of-thought prompting.
+
+## The Structure That Works
+
+Instead of: "Write me a blog post about productivity"
+
+Try: "I need to write about productivity. First, list 5 angles that would resonate with busy professionals. Then pick the most compelling and outline key points. Finally, write the introduction using a hook that creates curiosity."
+
+## Why It Works
+
+You're not asking AI to think FOR you. You're asking it to think WITH you—step by step.
+
+## Results
+
+3x better output. Immediately. Every time.`,
+
+    '30-minute-blog-post': `Our complete workflow—from idea to published post in 30 minutes flat.
+
+## The 5-Step System
+
+**Minutes 0-5:** Ideation with AI brainstorm
+**Minutes 5-10:** Outline and structure
+**Minutes 10-20:** First draft (voice-heavy, edit-light)
+**Minutes 20-25:** AI-assisted refinement
+**Minutes 25-30:** Final polish and publish
+
+## Why It Works
+
+Most people spend 4+ hours because they try to perfect as they write. We separate creation from editing.
+
+## The Template
+
+Use the same structure every time. Remove decision fatigue. Build speed through repetition.`,
+
+    '5-minute-email-system': `The average professional spends 2.6 hours daily on email. Here's how to cut that to 30 minutes total.
+
+## The Problem
+
+Email isn't communication—it's interruption. Every ping breaks flow state. Every reply invites another reply.
+
+## The System
+
+**Morning batch:** Check email twice (9 AM, 4 PM)
+**Template library:** 80% of emails use saved templates
+**Five-sentence rule:** No email over 5 sentences
+**NRR:** No response required on most emails
+
+## Results
+
+2.5 hours saved daily. Better focus. Less stress. More deep work.`,
+
+    'ai-market-week-1': `What actually matters this week in AI—signal, not noise.
+
+## This Week's Focus
+
+- Claude 4 agentic capabilities
+- Gemini 2.5 context window expansion
+- Open-source model competition
+- Enterprise adoption acceleration
+
+## What to Ignore
+
+- Hype about "AGI breakthroughs"
+- Every new "ChatGPT killer"
+- Product launches without use cases
+
+## The Signal
+
+Real progress is quieter than headlines suggest. Watch what enterprises adopt, not what trends.`,
+
+    'ai-automation-workflow-guide': `Build AI workflows that save 10+ hours weekly. Step-by-step guide with working examples.
+
+## The TACO Framework
+
+**Target:** Specific tasks, not vague goals
+**Analyze:** Map every human step
+**Construct:** Build with error handling
+**Optimize:** Measure and improve
+
+## Example Workflow
+
+Content research: Trigger → Search → Scrape → Analyze → Format → Notify
+
+## Tools You Need
+
+ChatGPT/Claude for reasoning, Make for automation, Airtable for storage, Zapier for connections.
+
+## Start Here
+
+Pick one repetitive task. Map it step by step. Automate the most painful 20%.`,
+
+    'api-integration-automation-guide': `Master API integrations for production workflows. Code examples and patterns that scale.
+
+## HTTP Methods
+
+GET for retrieval, POST for creation, PUT for updates, PATCH for partial changes, DELETE for removal.
+
+## Auth Patterns
+
+API keys for services, OAuth for user apps, JWT for stateless auth, webhooks for events.
+
+## Error Handling
+
+Always implement retry logic with exponential backoff. Log everything. Alert on failures.
+
+## Production Code
+
+Timeout settings, rate limiting, circuit breakers, health checks.`,
+
+    '15-email-templates-that-get-responses': `15 templates that get 340% better response rates. Tested across 10,000+ emails.
+
+## Cold Outreach
+
+Value-first approach: Lead with insight, not ask
+Question opener: Curiosity over pitch
+Social proof: Credibility through results
+
+## Follow-Ups
+
+Gentle reminder: Persistence without pressure
+Breakup email: Graceful exit
+Value add: New information, not just "checking in"
+
+## Key Metrics
+
+Personalized subjects: +35% open rates
+Specific times: +28% replies
+Social proof: +42% trust
+Single ask: +51% response
+
+## Templates That Work
+
+Copy-paste ready with personalization tokens included.`,
+
+    'ai-productivity-stack-april-2026': `The 7 tools professionals actually use in April 2026. Real ROI data.
+
+## The Stack
+
+1. Claude 4 - Complex reasoning
+2. ChatGPT - General productivity  
+3. Perplexity - Research
+4. Cursor - Code generation
+5. Notion AI - Document workflows
+6. Make - Automation
+7. Whisper - Transcription
+
+## Pricing
+
+Total monthly: $89-127 for complete productivity stack.
+
+## ROI
+
+Average time saved: 5.4 hours weekly
+Payback period: 2-3 weeks typically`,
+
+    'ai-productivity-forecast-2026': `5 beta trends early adopters are using now. What's coming in 2026.
+
+## Trend 1: Ambient Intelligence
+
+AI that observes and assists in real-time. No context switching.
+
+## Trend 2: Agent Colonies
+
+Specialized AI agents working together. Research, write, edit, fact-check.
+
+## Trend 3: Context-Aware Workspaces
+
+Documents, emails, projects connected. Instant information retrieval.
+
+## Timeline
+
+Mainstream adoption: Q2-Q4 2026
+Current stage: Beta, limited access`,
+
+    'ai-productivity-gap-2026': `Why 91% use AI but only 20% see results. Data from 1,000+ companies.
+
+## The Gap
+
+91% adoption rate
+80%+ no measurable ROI
+5.4% time saved weekly
+20% bottom-line impact
+
+## Root Causes
+
+Tactical not strategic use
+Experimentation trap
+Training deficit
+Metrics misalignment
+
+## Solutions
+
+Start with outcomes
+Build systems not features
+Train relentlessly
+Measure what matters`,
+
+    'success-stories-april-2026': `How 3 professionals cut 20+ hours from their workweek. Real case studies.
+
+## Operations Director
+
+Before: 60+ hour weeks, constantly firefighting
+After: 40-hour weeks, proactive strategy
+Key change: Delegation + AI automation
+
+## Marketing Manager
+
+Before: 4 hours daily on emails
+After: 45 minutes with templates
+Key change: System over brute force
+
+## Consultant
+
+Before: Manual report writing
+After: AI-assisted, 3x faster
+Key change: Tool + workflow integration`
+  };
+  return contents[slug] || 'Content coming soon...';
+};
+
+const content = getContent(post.slug);
 ---
 
-{PostComponent ? <PostComponent /> : (
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Post | Zero Method</title>
+  <title>{post.title} | Zero Method</title>
+  <meta name="description" content={content.slice(0, 150)} />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #fff; line-height: 1.7; min-height: 100vh; }
+    body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #fff; line-height: 1.8; }
     nav { background: rgba(10,10,15,0.9); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; backdrop-filter: blur(10px); border-bottom: 1px solid #27272A; z-index: 100; }
     .container { max-width: 800px; margin: 0 auto; padding: 100px 2rem 4rem; }
-    h1 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
-    .loading { text-align: center; padding: 4rem 2rem; }
-    .loading p { color: #A1A1AA; font-size: 1.2rem; }
+    .thumbnail { font-size: 6rem; text-align: center; margin-bottom: 2rem; padding: 3rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+    h2 { font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #F59E0B; }
+    h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+    p { color: #A1A1AA; margin-bottom: 1.25rem; font-size: 1.1rem; white-space: pre-wrap; }
+    strong { color: #fff; }
+    .meta { color: #71717A; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .tag { background: rgba(245,158,11,0.2); color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    blockquote { border-left: 4px solid #F59E0B; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: #A1A1AA; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 0 12px 12px 0; }
+    ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
+    li { margin-bottom: 0.75rem; color: #A1A1AA; }
+    .back { color: #A1A1AA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; }
+    .back:hover { color: #F59E0B; }
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      .thumbnail { font-size: 4rem; padding: 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -56,11 +302,17 @@ const { component: PostComponent } = Astro.props;
     <a href="/" style="color: #F59E0B; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Zero<span style="color: #fff;">Method</span></a>
   </nav>
   <div class="container">
-    <div class="loading">
-      <h1>Loading...</h1>
-      <p>Fetching blog content for: {slug}</p>
+    <a href="/blog" class="back">← Back to Blog</a>
+    <div class="thumbnail" style={`background: ${post.bg}`}>{post.emoji}</div>
+    <div class="meta">
+      <span class="tag">{post.category}</span>
+      <span>{post.readTime}</span>
+      <span>•</span>
+      <span>April 8, 2026</span>
     </div>
+    <h1>{post.title}</h1>
+    <p>{content}</p>
+    <a href="/blog" class="back">← Back to All Articles</a>
   </div>
 </body>
 </html>
-)}
