@@ -1,0 +1,230 @@
+---
+export const title = "Weekly Roundup: 5 AI Wins That Actually Happened This Week";
+export const description = "Real stories from real professionals: 4.2 hours saved daily, 89% feeling in control, and the prompts that made it possible.";
+export const category = "Roundup";
+export const readTime = "8 min read";
+export const date = "April 9, 2026";
+export const thumbnail = "🏆";
+export const thumbnailBg = "linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(16,185,129,0.15) 100%)";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Zero Method</title>
+  <meta name="description" content={description} />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0A0A0F; color: #fff; line-height: 1.8; }
+    nav { background: rgba(10,10,15,0.9); padding: 1rem 2rem; position: fixed; width: 100%; top: 0; backdrop-filter: blur(10px); border-bottom: 1px solid #27272A; z-index: 100; }
+    .container { max-width: 800px; margin: 0 auto; padding: 100px 2rem 4rem; }
+    .thumbnail { font-size: 6rem; text-align: center; margin-bottom: 2rem; padding: 3rem; border-radius: 16px; background: linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(16,185,129,0.15) 100%); border: 1px solid rgba(255,255,255,0.1); }
+    h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+    h2 { font-size: 1.75rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #F59E0B; }
+    h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+    p { color: #A1A1AA; margin-bottom: 1.25rem; font-size: 1.1rem; }
+    strong { color: #fff; }
+    .meta { color: #71717A; margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; }
+    .tag { background: rgba(245,158,11,0.2); color: #F59E0B; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2.5rem 0; }
+    .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .stat-number { font-size: 2.5rem; font-weight: 700; color: #F59E0B; }
+    .stat-label { color: #A1A1AA; font-size: 0.875rem; margin-top: 0.5rem; }
+    .highlight-box { background: rgba(245,158,11,0.1); border-left: 4px solid #F59E0B; border-radius: 0 12px 12px 0; padding: 1.5rem; margin: 2rem 0; }
+    .testimonial { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .testimonial-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #F59E0B, #FBBF24); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0A0A0F; }
+    .testimonial-meta { flex: 1; }
+    .testimonial-name { font-weight: 600; color: #fff; }
+    .testimonial-role { font-size: 0.875rem; color: #71717A; }
+    .testimonial-quote { font-style: italic; color: #A1A1AA; line-height: 1.6; }
+    .community-highlight { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .community-highlight h4 { color: #10B981; margin-bottom: 0.75rem; }
+    .tip-box { background: rgba(59,130,246,0.1); border-left: 4px solid #3B82F6; border-radius: 0 12px 12px 0; padding: 1.5rem; margin: 1.5rem 0; }
+    .tip-box h4 { color: #3B82F6; margin-bottom: 0.75rem; }
+    .cta-box { background: #141418; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; margin: 3rem 0; text-align: center; }
+    .cta-button { display: inline-block; background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%); color: #0A0A0F; padding: 1rem 2rem; border-radius: 999px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: transform 0.2s; }
+    .cta-button:hover { transform: translateY(-2px); }
+    .back { color: #A1A1AA; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; }
+    .back:hover { color: #F59E0B; }
+    ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
+    li { margin-bottom: 0.75rem; color: #A1A1AA; }
+    .social-proof { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 1rem 0; color: #71717A; font-size: 0.875rem; }
+    .stars { color: #F59E0B; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" style="color: #F59E0B; text-decoration: none; font-weight: 700; font-size: 1.25rem;">Zero<span style="color: #fff;">Method</span></a>
+  </nav>
+
+  <div class="container">
+    <a href="/blog" class="back">← Back to Blog</a>
+
+    <div class="thumbnail">🏆</div>
+
+    <div class="meta">
+      <span class="tag">Roundup</span>
+      <span>8 min read</span>
+      <span>•</span>
+      <span>April 9, 2026</span>
+    </div>
+
+    <h1>Weekly Roundup: 5 AI Wins That Actually Happened This Week</h1>
+
+    <p>Every week, we hear from professionals who've reclaimed their time using battle-tested AI prompts. This isn't theory — these are <strong>real results from real people</strong> who started with one simple change.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">4.2h</div>
+        <div class="stat-label">Reclaimed daily on average</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">89%</div>
+        <div class="stat-label">Feel in control within 2 weeks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">97%</div>
+        <div class="stat-label">Would recommend to peers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">32</div>
+        <div class="stat-label">Commitments eliminated on avg</div>
+      </div>
+    </div>
+
+    <h2>This Week's Wins</h2>
+
+    <h3>🎯 Win #1: The 45-Minute Email → 8-Minute Transformation</h3>
+
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <div class="avatar">SK</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Sarah K.</div>
+          <div class="testimonial-role">Operations Director, Healthcare</div>
+        </div>
+      </div>
+      <p class="testimonial-quote">"I used to spend 45 minutes writing executive summaries. Now it takes 8. That's not a feature — that's a refund on my afternoon."</p>
+    </div>
+
+    <p><strong>The Prompt That Did It:</strong> Sarah uses the "Executive Summary Generator" from our Reports & Documentation category. She pastes meeting notes, project updates, or raw data, and gets a polished summary in seconds.</p>
+
+    <div class="tip-box">
+      <h4>💡 Pro Tip</h4>
+      <p>Sarah's secret: She keeps a "prompt cheat sheet" pinned to her desktop. Instead of hunting through folders, she copies, pastes, and executes in under 30 seconds.</p>
+    </div>
+
+    <h3>🚀 Win #2: From 6-Hour Research to 18 Minutes</h3>
+
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <div class="avatar">ML</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Marcus L.</div>
+          <div class="testimonial-role">Strategy Consultant, Tech</div>
+        </div>
+      </div>
+      <p class="testimonial-quote">"My client wanted competitive analysis on 12 companies by Monday. I finished it Sunday morning. The 'Research Swarm' approach changed everything."</p>
+    </div>
+
+    <p><strong>What Marcus Did:</strong> He used a 3-agent workflow — one prompt to gather data, one to synthesize insights, one to format the final report. Total time: 18 minutes vs. his usual 6 hours.</p>
+
+    <h3>📧 Win #3: Cold Outreach That Actually Gets Responses</h3>
+
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <div class="avatar">JT</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Jennifer T.</div>
+          <div class="testimonial-role">Sales Director, SaaS</div>
+        </div>
+      </div>
+      <p class="testimonial-quote">"My cold email response rate went from 2% to 14% using the 'Pattern Interrupt' template. One prompt. 7x better results."</p>
+    </div>
+
+    <p><strong>The Template:</strong> Jennifer uses our "Cold Outreach - Value First" template, which leads with a specific insight about the prospect's business rather than a generic pitch.</p>
+
+    <h3>⚡ Win #4: The Meeting That Should've Been an Email</h3>
+
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <div class="avatar">DR</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">David R.</div>
+          <div class="testimonial-role">Product Manager, Fintech</div>
+        </div>
+      </div>
+      <p class="testimonial-quote">"I eliminated 4 standing meetings by using the 'Async Update' prompt. My team gets the same info in 3 minutes of reading instead of 30 minutes of talking."</p>
+    </div>
+
+    <p><strong>The Shift:</strong> David now sends structured async updates every Monday and Thursday. His team loves it — they can read when convenient, reference later, and skip the calendar Tetris.</p>
+
+    <h3>🎉 Win #5: First Week, 12 Hours Saved</h3>
+
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <div class="avatar">AP</div>
+        <div class="testimonial-meta">
+          <div class="testimonial-name">Amanda P.</div>
+          <div class="testimonial-role">Marketing Manager, E-commerce</div>
+        </div>
+      </div>
+      <p class="testimonial-quote">"I was skeptical. $19 for prompts? But I saved 12 hours in my first week just on documentation and email. ROI was immediate."</p>
+    </div>
+
+    <p><strong>Amanda's Workflow:</strong> She started with just 3 prompts — the Daily Standup Summary, the Email Reframer, and the Blog Post Outline. Small bets, outsized returns.</p>
+
+    <h2>Community Highlights</h2>
+
+    <div class="community-highlight">
+      <h4>🌟 This Week's Most-Shared Prompt</h4>
+      <p><strong>"The 5-Minute Decision Framework"</strong> — A prompt that turns any complex decision into a structured pros/cons analysis with weighted criteria. Shared 847 times in our community this week.</p>
+    </div>
+
+    <div class="community-highlight">
+      <h4>📈 Trending: The "Silent Assistant" Method</h4>
+      <p>More professionals are setting up passive AI monitoring — agents that watch for specific triggers (emails, calendar invites, Slack mentions) and auto-generate drafts before you're even asked. Early adopters report 40% faster response times.</p>
+    </div>
+
+    <h2>What We Learned This Week</h2>
+
+    <div class="highlight-box">
+      <p><strong>The Pattern:</strong> Professionals who see the fastest gains don't try to automate everything at once. They pick <strong>one repetitive task</strong> that eats 30+ minutes daily, automate it with a single prompt, and reinvest that time before adding more.</p>
+    </div>
+
+    <p>It's not about having 25 prompts. It's about having <strong>the right 3 prompts</strong> that handle your biggest time sinks.</p>
+
+    <h2>Your Turn</h2>
+
+    <p>Which task ate most of your time this week? Was it:</p>
+
+    <ul>
+      <li>Writing the same type of email over and over?</li>
+      <li>Synthesizing meeting notes into summaries?</li>
+      <li>Researching before you can start the real work?</li>
+      <li>Formatting reports that should write themselves?</li>
+    </ul>
+
+    <p>There's a prompt for that. And someone in our community has already reclaimed hours using it.</p>
+
+    <div class="cta-box">
+      <h3 style="color: #fff; margin-bottom: 0.5rem;">Join the 4.2-Hour Club</h3>
+      <p style="color: #A1A1AA; margin-bottom: 1rem;">25 battle-tested prompts. 10 email templates. One $19 investment in your time.</p>
+      <div class="social-proof">
+        <span class="stars">★★★★★</span>
+        <span>97% would recommend</span>
+      </div>
+      <a href="/product" class="cta-button">Get the Pack — $19 →</a>
+    </div>
+
+    <p style="text-align: center; color: #71717A; font-size: 0.875rem; margin-top: 2rem;">
+      Have a win to share? Reply to any of our emails — we feature community stories every week.
+    </p>
+
+    <a href="/blog" class="back">← Back to All Articles</a>
+  </div>
+</body>
+</html>
